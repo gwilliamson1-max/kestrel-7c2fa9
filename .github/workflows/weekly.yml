@@ -1,0 +1,50 @@
+name: Weekly tort signal run
+
+on:
+  schedule:
+    - cron: "0 11 * * 1"   # Mondays 11:00 UTC (~6am CT)
+  workflow_dispatch: {}     # manual run button
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Run pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENFDA_API_KEY: ${{ secrets.OPENFDA_API_KEY }}
+          COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+        run: python -m src.run_pipeline --source both
+
+      - name: Commit dashboard data + memo
+        run: |
+          git config user.name "signal-bot"
+          git config user.email "actions@github.com"
+          git add docs/signals.json reports/
+          git commit -m "Weekly signal run $(date +%F)" || echo "no changes"
+          git push
+
+      - name: Email weekly memo
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "Mass Tort Signal Memo — ${{ github.run_started_at }}"
+          to: ${{ secrets.MEMO_RECIPIENTS }}
+          from: Mass Tort Signal Engine <${{ secrets.SMTP_USERNAME }}>
+          html_body: file://reports/latest.html
