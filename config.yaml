@@ -1,0 +1,74 @@
+# Mass Tort Signal Engine configuration
+
+window:
+  # Trailing screening window in days (primary screen)
+  screen_days: 365
+  # Quarters of history for trajectory analysis on flagged pairs
+  trajectory_quarters: 6
+
+universe:
+  # Top-N products by serious-report volume to screen each run
+  faers_top_drugs: 400
+  maude_top_devices: 300
+  # Reactions/problems per product to evaluate
+  events_per_product: 50
+  # Extra products always screened regardless of volume rank
+  faers_watchlist: []
+  maude_watchlist: []
+
+thresholds:
+  # Classic screen: PRR >= 2, chi-square >= 4, >= 3 cases
+  prr_min: 2.0
+  chi2_min: 4.0
+  case_min: 3
+  # Only pairs at/above these go to enrichment + LLM scoring
+  max_flagged_for_enrichment: 120
+  # Final memo size
+  memo_top_n: 10
+
+# Reactions too common/nonspecific to ever be litigation signals.
+# Filtered before stats to save API calls; LLM would reject them anyway.
+reaction_stoplist:
+  - DRUG INEFFECTIVE
+  - OFF LABEL USE
+  - PRODUCT USE IN UNAPPROVED INDICATION
+  - DRUG INTERACTION
+  - NAUSEA
+  - HEADACHE
+  - DIZZINESS
+  - FATIGUE
+  - VOMITING
+  - DIARRHOEA
+  - RASH
+  - PRURITUS
+  - MALAISE
+  - PAIN
+  - PYREXIA
+  - CONDITION AGGRAVATED
+  - NO ADVERSE EVENT
+  - PRODUCT DOSE OMISSION ISSUE
+  - INAPPROPRIATE SCHEDULE OF PRODUCT ADMINISTRATION
+  - THERAPEUTIC RESPONSE DECREASED
+  - WRONG TECHNIQUE IN PRODUCT USAGE PROCESS
+  - INTENTIONAL PRODUCT MISUSE
+  - ACCIDENTAL OVERDOSE
+  - TOXICITY TO VARIOUS AGENTS
+  - COMPLETED SUICIDE
+  - INTENTIONAL OVERDOSE
+  - DEATH        # bare "death" with no mechanism; specific fatal events still pass
+  # MAUDE nonspecific patient-problem codes
+  - NO CLINICAL SIGNS, SYMPTOMS OR CONDITIONS
+  - NO KNOWN IMPACT OR CONSEQUENCE TO PATIENT
+  - NO CONSEQUENCES OR IMPACT TO PATIENT
+  - NO INFORMATION
+  - INSUFFICIENT INFORMATION
+  - APPROPRIATE TERM/CODE NOT AVAILABLE
+  - PATIENT PROBLEM/MEDICAL PROBLEM
+
+llm:
+  model: claude-sonnet-4-5
+  max_signals_per_call: 8
+
+enrichment:
+  pubmed_max_titles: 5
+  courtlistener_max_hits: 10
