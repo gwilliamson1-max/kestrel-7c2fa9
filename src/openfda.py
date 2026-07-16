@@ -24,6 +24,12 @@ def _get(endpoint: str, params: dict, retries: int = 5) -> dict:
         if r.status_code == 404:
             # openFDA returns 404 for "no results" on count queries
             return {"results": [], "meta": {"results": {"total": 0}}}
+        if r.status_code == 400:
+            # malformed query — usually corrupted characters in product names
+            # (e.g. mangled trademark symbols in MAUDE). Skip, don't crash.
+            print(f"[openfda] 400 Bad Request, skipping: "
+                  f"{str(params.get('search', ''))[:140]}", flush=True)
+            return {"results": [], "meta": {"results": {"total": 0}}}
         if r.status_code in (429, 500, 502, 503):
             time.sleep(2 ** attempt + 1)
             continue
