@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mass Tort Signal Dashboard</title>
+<style>
+  :root { --ink:#1b2733; --muted:#6b7a8c; --line:#e3e8ee; --accent:#1a5276;
+          --pursue:#1e8449; --monitor:#b7950b; --pass:#909497; }
+  body { font-family:'Segoe UI',system-ui,sans-serif; margin:0; color:var(--ink);
+         background:#f7f9fb; }
+  header { background:var(--ink); color:#fff; padding:18px 28px; }
+  header h1 { margin:0; font-size:20px; } header p { margin:4px 0 0; color:#aab7c4; font-size:13px;}
+  main { max-width:1100px; margin:24px auto; padding:0 16px; }
+  .controls { display:flex; gap:10px; margin-bottom:16px; flex-wrap:wrap; }
+  select, input { padding:6px 10px; border:1px solid var(--line); border-radius:6px; font-size:14px;}
+  .card { background:#fff; border:1px solid var(--line); border-radius:10px;
+          margin-bottom:12px; padding:14px 18px; }
+  .card h3 { margin:0 0 4px; font-size:16px; }
+  .badge { display:inline-block; padding:2px 10px; border-radius:12px; color:#fff;
+           font-size:12px; font-weight:600; margin-left:8px; vertical-align:middle;}
+  .stats { display:flex; gap:18px; flex-wrap:wrap; font-size:13px; color:var(--muted);
+           margin:6px 0; }
+  .stats b { color:var(--ink); }
+  .spark { font-family:monospace; font-size:13px; color:var(--accent); }
+  .rationale { font-size:13px; color:#333; border-left:3px solid var(--line);
+               padding-left:10px; margin-top:8px; }
+  .viab { float:right; font-size:22px; font-weight:700; color:var(--accent); }
+  .muted { color:var(--muted); font-size:12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Mass Tort Signal Dashboard</h1>
+  <p id="meta">Loading…</p>
+</header>
+<main>
+  <div class="controls">
+    <select id="src"><option value="">All sources</option>
+      <option value="faers">FAERS (drugs)</option><option value="maude">MAUDE (devices)</option></select>
+    <select id="rec"><option value="">All recommendations</option>
+      <option>pursue</option><option>monitor</option><option>pass</option></select>
+    <input id="q" placeholder="Filter by product or event…" size="30">
+  </div>
+  <div id="list"></div>
+</main>
+<script>
+let DATA = [];
+const recColor = r => ({pursue:'var(--pursue)',monitor:'var(--monitor)',pass:'var(--pass)'}[r]||'var(--pass)');
+const spark = t => (t||[]).map(x=>x.prr).join(' → ');
+
+function render() {
+  const src=document.getElementById('src').value,
+        rec=document.getElementById('rec').value,
+        q=document.getElementById('q').value.toUpperCase();
+  const el=document.getElementById('list'); el.innerHTML='';
+  DATA.filter(s => (!src||s.source===src)
+      && (!rec||(s.score&&s.score.recommendation===rec))
+      && (!q||s.product.includes(q)||s.event.includes(q)))
+    .forEach(s=>{
+      const sc=s.score||{}, e=s.enrichment||{}, lit=e.litigation||{},
+            pm=e.pubmed||{}, lbl=e.label||{};
+      const warn = lbl.event_in_warnings===false ? '<b style="color:var(--pursue)">risk NOT in label</b>'
+                 : lbl.event_in_warnings===true ? 'risk already in label' : '';
+      const d=document.createElement('div'); d.className='card';
+      d.innerHTML=`
+        <span class="viab">${sc.viability??'—'}</span>
+        <h3>${s.product} — ${s.event}
+          <span class="badge" style="background:${recColor(sc.recommendation)}">${(sc.recommendation||'unscored').toUpperCase()}</span>
+        </h3>
+        <div class="stats">
+          <span><b>${s.source.toUpperCase()}</b></span>
+          <span><b>${s.a}</b> cases</span>
+          <span>PRR <b>${s.prr}</b> (slope ${s.prr_slope>0?'+':''}${s.prr_slope}/q)</span>
+          <span>ROR <b>${s.ror}</b></span> <span>χ² <b>${s.chi2}</b></span>
+          <span>PubMed <b>${pm.count??'—'}</b></span>
+          <span>Dockets <b>${lit.docket_hits??'—'}</b></span>
+          <span>${warn}</span>
+        </div>
+        <div class="spark">PRR by quarter: ${spark(s.trajectory)||'—'}</div>
+        ${sc.rationale?`<div class="rationale">${sc.rationale}<br>
+          <span class="muted">Likely defendants: ${(sc.likely_defendants||[]).join(', ')||'n/a'}</span></div>`:''}`;
+      el.appendChild(d);
+    });
+  if(!el.children.length) el.innerHTML='<p class="muted">No signals match.</p>';
+}
+
+fetch('signals.json').then(r=>r.json()).then(j=>{
+  DATA=j.signals||[];
+  document.getElementById('meta').textContent=
+    `Generated ${j.generated} · ${DATA.length} flagged signals`;
+  render();
+}).catch(()=>document.getElementById('meta').textContent='signals.json not found — run the pipeline first.');
+['src','rec','q'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+</script>
+</body>
+</html>

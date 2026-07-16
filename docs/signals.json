@@ -1,0 +1,154 @@
+{
+ "generated": "2026-07-16",
+ "signals": [
+  {
+   "source": "faers",
+   "product": "ACETAMINOPHEN",
+   "event": "AUTISM SPECTRUM DISORDER",
+   "a": 1143,
+   "product_total": 22133,
+   "event_total": 1352,
+   "n": 496541,
+   "prr": 117.22,
+   "ror": 123.55,
+   "chi2": 20397.12,
+   "trajectory": [
+    {
+     "quarter": "2025Q1",
+     "a": 37,
+     "prr": 12.58
+    },
+    {
+     "quarter": "2025Q2",
+     "a": 26,
+     "prr": 10.78
+    },
+    {
+     "quarter": "2025Q3",
+     "a": 798,
+     "prr": 245.68
+    },
+    {
+     "quarter": "2025Q4",
+     "a": 292,
+     "prr": 79.69
+    },
+    {
+     "quarter": "2026Q1",
+     "a": 57,
+     "prr": 17.68
+    },
+    {
+     "quarter": "2026Q2",
+     "a": 0,
+     "prr": 0
+    }
+   ],
+   "prr_slope": -2.52,
+   "enrichment": {
+    "pubmed": {
+     "count": 66,
+     "titles": [
+      {
+       "pmid": "42371637",
+       "title": "Prenatal Acetaminophen (Paracetamol) Use and the Risk of Autism and/or Attention-Deficit/Hyperactivity Disorder Among Sibling-Matched Cohorts.",
+       "date": "2026 Jun 29"
+      },
+      {
+       "pmid": "42267060",
+       "title": "Beyond the Headlines: Examining the Evidence Around Acetaminophen and Autism Risk.",
+       "date": "2026 Jun"
+      },
+      {
+       "pmid": "42244339",
+       "title": "Acetaminophen use in pregnancy and autism: separating controversy from scientific evidence.",
+       "date": "2026 Jun 5"
+      },
+      {
+       "pmid": "42127326",
+       "title": "Drug development in autism spectrum disorder: genetic heterogeneity, failed trials, and the case for stratified pharmacotherapy.",
+       "date": "2026 Apr 10"
+      },
+      {
+       "pmid": "42093913",
+       "title": "Paracetamol in pregnancy: Navigating clinical uncertainty and avoiding the communication pitfalls of the \"measles, mumps, and rubella\" - autism controversy: A narrative review.",
+       "date": "2026"
+      }
+     ]
+    },
+    "label": {
+     "label_found": true,
+     "event_in_warnings": false,
+     "warning_snippet": "",
+     "has_boxed_warning": false
+    },
+    "litigation": {
+     "docket_hits": 774,
+     "sample_cases": [
+      {
+       "caseName": "In re: Acetaminophen - ASD-ADHD Products Liability Litigation",
+       "court": "District Court, S.D. New York",
+       "dateFiled": "2022-10-21",
+       "docket_id": 65598212
+      },
+      {
+       "caseName": "In Re: Acetaminophen - ASD-ADHD Products Liability Litigation",
+       "court": "District Court, S.D. New York",
+       "dateFiled": "2022-10-05",
+       "docket_id": 65408277
+      },
+      {
+       "caseName": "The State of Texas v. Johnson & Johnson",
+       "court": "District Court, E.D. Texas",
+       "dateFiled": "2025-11-06",
+       "docket_id": 71886163
+      },
+      {
+       "caseName": "IN RE: Acetaminophen - ASD/ADHD Products Liability Litigation",
+       "court": "United States Judicial Panel on Multidistrict Litigation",
+       "dateFiled": "2022-06-10",
+       "docket_id": 63565093
+      },
+      {
+       "caseName": "In Re: Acetaminophen - ASD-ADHD Products Liability Litigation",
+       "court": "Court of Appeals for the Second Circuit",
+       "dateFiled": "2024-04-10",
+       "docket_id": 69123120
+      },
+      {
+       "caseName": "In Re: Acetaminophen \u2212 ASD\u2212ADHD Products Liability",
+       "court": "Court of Appeals for the Second Circuit",
+       "dateFiled": "2024-09-30",
+       "docket_id": 69276380
+      },
+      {
+       "caseName": "Plump v. Johnson & Johnson Consumer Inc.",
+       "court": "District Court, S.D. New York",
+       "dateFiled": "2026-05-14",
+       "docket_id": 73345925
+      },
+      {
+       "caseName": "Johnson v. Johnson & Johnson Consumer Inc.",
+       "court": "District Court, S.D. New York",
+       "dateFiled": "2025-05-22",
+       "docket_id": 70342427
+      },
+      {
+       "caseName": "Miller v. Johnson & Johnson Consumer Inc.",
+       "court": "District Court, S.D. New York",
+       "dateFiled": "2025-09-24",
+       "docket_id": 71447225
+      },
+      {
+       "caseName": "Keila Chardon v. Johnson & Johnson Consumer, Inc.",
+       "court": "District Court, M.D. Florida",
+       "dateFiled": "2023-03-27",
+       "docket_id": 67095465
+      }
+     ]
+    }
+   },
+   "score": null
+  }
+ ]
+}
