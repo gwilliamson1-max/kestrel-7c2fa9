@@ -89,7 +89,7 @@ function render() {
   if(!el.children.length) el.innerHTML='<p class="muted">No signals match.</p>';
 }
 
-fetch('signals.json').then(r=>r.json()).then(j=>{
+fetch('signals.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(j=>{
   DATA=j.signals||[];
   document.getElementById('meta').textContent=
     `Generated ${j.generated} · ${DATA.length} flagged signals`;
