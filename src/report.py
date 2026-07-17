@@ -19,6 +19,9 @@ def _row(s):
     g = getattr(s, "generic_flag", None)
     if g:
         d["generic_flag"] = g
+    p = getattr(s, "preemption_flag", None)
+    if p:
+        d["preemption_flag"] = p
     return d
 
 
@@ -54,6 +57,11 @@ def write_memo_html(signals: list, cfg, path=None):
             vr = sc.get("viability_raw")
             adj = f" (raw {vr} → {sc.get('viability')})" if vr is not None else ""
             flag_line += f"\n            ⚑ GENERIC — preemption risk{adj}; {gen['note']}\n"
+        pre = getattr(s, "preemption_flag", None)
+        if pre:
+            vr = sc.get("viability_raw")
+            adj = f" (raw {vr} → {sc.get('viability')})" if vr is not None else ""
+            flag_line += f"\n            ⚑ DEVICE PREEMPTION{adj}; {pre['note']}\n"
         rows.append(f"""
         \t{i}. {s.product} — {s.event}
             viability {sc.get('viability')}/100

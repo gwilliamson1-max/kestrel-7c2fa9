@@ -84,6 +84,14 @@ def main():
     if n_generic:
         log(f"[generic] downweighted {n_generic} generic-available signals")
 
+    # --- Device federal-preemption downweight (post-scoring, MAUDE) --------- #
+    # PMA / Class III devices carry Riegel express preemption of design/warning
+    # claims. Downweight viability and flag; do NOT drop (parallel claims survive).
+    from . import preemption
+    n_preempt = preemption.apply_penalty(flagged, cfg, log=log)
+    if n_preempt:
+        log(f"[preemption] downweighted {n_preempt} PMA/Class-III device signals")
+
     jpath = report.write_signals_json(flagged)
     mpath = report.write_memo_html(flagged, cfg)
     log(f"Wrote {jpath} and {mpath}")

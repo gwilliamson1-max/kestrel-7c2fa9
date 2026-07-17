@@ -43,6 +43,17 @@ Score each signal for LITIGATION VIABILITY, not medical interest. Consider:
    share, or an innovator-liability jurisdiction). Biologics (no true generic) are
    not affected. (A deterministic downweight is also applied after you score; be
    consistent with it.)
+8. Device federal preemption (MAUDE) — if enrichment.preemption.preempted is true,
+   the device reached market via PMA (Class III), and state design-defect and
+   failure-to-warn claims are expressly preempted under Riegel v. Medtronic.
+   Downweight viability heavily and lean "monitor"/"pass". This is why PMA devices
+   (TAVR valves, drug-eluting stents, artificial discs, most IOLs) rarely sustain
+   mass tort, while 510(k) devices (metal-on-metal hips, surgical mesh, IVC
+   filters) do. EXCEPTION: parallel claims survive preemption — a manufacturing
+   defect, a violation of the device's own FDA-approved specifications, or failure
+   to report adverse events to FDA. If the signal fits a parallel-claim theory,
+   say so and do not zero it out. (A deterministic downweight is also applied after
+   you score; be consistent with it.)
 
 Return ONLY a JSON array, one object per signal, schema:
 {"product": str, "event": str,

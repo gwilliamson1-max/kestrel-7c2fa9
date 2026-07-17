@@ -108,7 +108,7 @@ def courtlistener(product: str, event: str, max_hits: int = 10) -> dict:
 
 
 def enrich_signal(sig, cfg, log=print):
-    from . import generics
+    from . import generics, preemption
     e = {}
     e["pubmed"] = pubmed(sig.product, sig.event,
                          cfg["enrichment"]["pubmed_max_titles"])
@@ -117,6 +117,10 @@ def enrich_signal(sig, cfg, log=print):
         # generic availability -> preemption exposure (Mensing/Bartlett)
         if (cfg.get("generic_filter", {}) or {}).get("enabled", True):
             e["generic"] = generics.generic_available(sig.product, cfg)
+    if sig.source == "maude":
+        # device FDA pathway -> Riegel preemption exposure (PMA vs 510(k))
+        if (cfg.get("preemption_filter", {}) or {}).get("enabled", True):
+            e["preemption"] = preemption.device_pathway(sig.product, cfg)
     e["litigation"] = courtlistener(sig.product, sig.event,
                                     cfg["enrichment"]["courtlistener_max_hits"])
     sig.enrichment = e
