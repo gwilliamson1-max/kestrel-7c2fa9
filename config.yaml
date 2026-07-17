@@ -67,6 +67,23 @@ generic_filter:
   # Use only to correct openFDA misses; detection is automatic otherwise.
   overrides: {}
 
+# Device federal-preemption screen (MAUDE): downweight (not drop). A device that
+# reached market via PMA (Class III) carries Riegel v. Medtronic express
+# preemption of state design-defect and failure-to-warn claims — a near-
+# dispositive bar. 510(k) devices (Lohr) are NOT preempted, which is why the big
+# device MDLs (metal-on-metal hips, surgical mesh, IVC filters) are 510(k) and PMA
+# devices (TAVR, drug-eluting stents, artificial discs, most IOLs) rarely sustain
+# mass tort. Kept and flagged rather than dropped, because parallel claims
+# (manufacturing defect / violation of the device's own FDA-approved specs /
+# failure to report to FDA) survive preemption. Detection via openFDA: device
+# product code + class from MAUDE records, cross-checked against the PMA registry.
+preemption_filter:
+  enabled: true
+  penalty: 0.3                  # multiply LLM viability by this for PMA/Class-III devices
+  demote_to_monitor_below: 60   # pursue -> monitor if adjusted viability drops below this
+  # Force-classify specific device generic names (substring) -> true/false preempted.
+  overrides: {}
+
 # Reactions too common/nonspecific to ever be litigation signals.
 # Filtered before stats to save API calls; LLM would reject them anyway.
 reaction_stoplist:
