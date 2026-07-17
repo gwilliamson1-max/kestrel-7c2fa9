@@ -26,6 +26,47 @@ thresholds:
   # Final memo size
   memo_top_n: 10
 
+# False-positive screen: indication confounding + implausible statistics.
+# Implemented in src/confounding.py; applied in run_pipeline.
+#   - Indication confounding: the "adverse event" is the disease the drug is
+#     prescribed to treat, or a manifestation of it (e.g. faricimab / retinal
+#     thickening, insulin / hyperglycemia). These are lack-of-efficacy, not
+#     injuries, and make hopeless failure-to-warn cases -> DROPPED.
+#   - Implausible statistics: PRR / chi-square far beyond any real signal (the
+#     arithmetic signature of a near-zero background), or a spike-then-collapse
+#     quarterly PRR trend -> dropped from the memo and written to
+#     docs/filtered.json for review.
+# The generic reaction_stoplist below only catches non-specific terms; the
+# indication screen catches drug-SPECIFIC clinical terms that look like injuries.
+confounding:
+  enabled: true
+  prr_ceiling: 1000            # PRR above this is a near-zero-background artifact
+  chi2_ceiling: 100000         # chi-square above this is a degenerate 2x2 table
+  quarter_instability_ratio: 50  # adjacent-quarter PRR swing that flags noise
+  # Optional manual indication map for drugs whose openFDA label text is thin.
+  # drug-name substring (case-insensitive) -> event terms to treat as the
+  # indication. The concept model in confounding.py already covers the common
+  # cases; use this only to add drugs/terms it misses.
+  indication_overrides:
+    faricimab: [retinal thickening, macular edema, macular oedema, retinal edema]
+
+# Generic-availability screen: downweight (not drop). Drugs with generic
+# equivalents on the market carry heavy failure-to-warn preemption risk
+# (PLIVA v. Mensing 2011; Mutual v. Bartlett 2013 — generic makers can't change
+# their label, so state failure-to-warn claims against them are preempted).
+# Kept and flagged rather than dropped, because the branded manufacturer's
+# exposure window and innovator-liability jurisdictions can still support a case.
+# Detection: openFDA NDC directory — an ANDA or authorized-generic listing under
+# the drug's generic name means a generic is on the market. Biologics (BLA) have
+# biosimilars, not generics, and are not downweighted.
+generic_filter:
+  enabled: true
+  penalty: 0.5                  # multiply LLM viability by this when generic-available
+  demote_to_monitor_below: 60   # pursue -> monitor if adjusted viability drops below this
+  # Force-classify specific drugs (substring, case-insensitive) -> true/false.
+  # Use only to correct openFDA misses; detection is automatic otherwise.
+  overrides: {}
+
 # Reactions too common/nonspecific to ever be litigation signals.
 # Filtered before stats to save API calls; LLM would reject them anyway.
 reaction_stoplist:
