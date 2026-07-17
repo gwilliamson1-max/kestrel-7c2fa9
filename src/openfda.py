@@ -9,7 +9,18 @@ API_KEY = os.environ.get("OPENFDA_API_KEY", "")
 _session = requests.Session()
 
 
-def _get(endpoint: str, params: dict, retries: int = 5) -> dict:
+_EMPTY = {"results": [], "meta": {"results": {"total": 0}}}
+
+
+def _get(endpoint: str, params: dict, retries: int = 6) -> dict:
+    """GET an openFDA endpoint with retry/backoff.
+
+    Resilience policy: a single failing query must never abort an unattended
+    weekly run. Transient errors (network, 429, 5xx) are retried with
+    exponential backoff; if they persist past `retries`, we log loudly and
+    return an empty result so the caller simply skips that product/pair rather
+    than crashing the whole pipeline. openFDA transient 500/503 bursts are
+    common, and every downstream screen already tolerates missing data."""
     if API_KEY:
         params = {**params, "api_key": API_KEY}
     url = f"{BASE}{endpoint}"
@@ -23,18 +34,24 @@ def _get(endpoint: str, params: dict, retries: int = 5) -> dict:
             return r.json()
         if r.status_code == 404:
             # openFDA returns 404 for "no results" on count queries
-            return {"results": [], "meta": {"results": {"total": 0}}}
+            return dict(_EMPTY)
         if r.status_code == 400:
             # malformed query — usually corrupted characters in product names
             # (e.g. mangled trademark symbols in MAUDE). Skip, don't crash.
             print(f"[openfda] 400 Bad Request, skipping: "
                   f"{str(params.get('search', ''))[:140]}", flush=True)
-            return {"results": [], "meta": {"results": {"total": 0}}}
-        if r.status_code in (429, 500, 502, 503):
+            return dict(_EMPTY)
+        if r.status_code in (408, 429, 500, 502, 503, 504):
             time.sleep(2 ** attempt + 1)
             continue
-        r.raise_for_status()
-    raise RuntimeError(f"openFDA gave up after {retries} retries: {endpoint} {params}")
+        # any other unexpected status: log and skip rather than raise
+        print(f"[openfda] HTTP {r.status_code}, skipping: "
+              f"{str(params.get('search', ''))[:140]}", flush=True)
+        return dict(_EMPTY)
+    # exhausted retries on a transient error — degrade gracefully, don't abort
+    print(f"[openfda] gave up after {retries} retries (transient), skipping: "
+          f"{endpoint} {str(params.get('search', ''))[:140]}", flush=True)
+    return dict(_EMPTY)
 
 
 def count(endpoint: str, search: str, field: str, limit: int = 100) -> list[dict]:
