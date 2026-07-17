@@ -108,11 +108,15 @@ def courtlistener(product: str, event: str, max_hits: int = 10) -> dict:
 
 
 def enrich_signal(sig, cfg, log=print):
+    from . import generics
     e = {}
     e["pubmed"] = pubmed(sig.product, sig.event,
                          cfg["enrichment"]["pubmed_max_titles"])
     if sig.source == "faers":
         e["label"] = label_check(sig.product, sig.event)
+        # generic availability -> preemption exposure (Mensing/Bartlett)
+        if (cfg.get("generic_filter", {}) or {}).get("enabled", True):
+            e["generic"] = generics.generic_available(sig.product, cfg)
     e["litigation"] = courtlistener(sig.product, sig.event,
                                     cfg["enrichment"]["courtlistener_max_hits"])
     sig.enrichment = e

@@ -10,6 +10,15 @@ disproportionality statistics, quarterly trend, literature counts, FDA label
 status, and existing-litigation checks.
 
 Score each signal for LITIGATION VIABILITY, not medical interest. Consider:
+0. Indication confounding / lack of efficacy — FIRST, check whether the event is
+   the condition the product is prescribed to treat, or a manifestation or
+   progression of it (e.g. an anti-VEGF drug and "retinal thickening"/"macular
+   edema"; insulin and "hyperglycemia"; an antihypertensive and "hypertension").
+   If so, the report reflects the drug failing to work, not causing a new injury.
+   Score viability 0 and recommend "pass": there is no duty to warn that a drug
+   may fail to treat its own indication, and a disproportionality spike here is
+   an artifact of the event being reported almost only for that drug. (Signals
+   like this are normally removed before scoring, but flag any that reach you.)
 1. Injury severity and objectivity — severe, diagnosable, permanent injuries
    score high; subjective or transient complaints score near zero.
 2. Mechanism plausibility — is there a plausible biological/engineering
@@ -22,8 +31,18 @@ Score each signal for LITIGATION VIABILITY, not medical interest. Consider:
    thousands of cases means you're late.
 5. Trajectory — an accelerating PRR (positive slope) is more attractive than
    a flat-high signal that the plaintiffs' bar has already seen for years.
+   But a PRR in the thousands, or one that spikes then collapses to zero, is a
+   near-zero-background artifact, not a real accelerating signal.
 6. Defendant solvency — note the likely manufacturer(s) and whether they are
    collectible (major pharma/device makers generally are).
+7. Generic availability / preemption — if enrichment.generic.available is true, a
+   generic is on the market, and failure-to-warn claims against generic makers are
+   largely preempted (PLIVA v. Mensing; Mutual v. Bartlett). Downweight viability
+   substantially and lean toward "monitor"/"pass" UNLESS there is a live theory
+   against the brand (injury during the brand-exposure window, ongoing brand market
+   share, or an innovator-liability jurisdiction). Biologics (no true generic) are
+   not affected. (A deterministic downweight is also applied after you score; be
+   consistent with it.)
 
 Return ONLY a JSON array, one object per signal, schema:
 {"product": str, "event": str,
