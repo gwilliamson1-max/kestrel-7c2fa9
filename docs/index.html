@@ -63,14 +63,16 @@ function render() {
       const warn = lbl.event_in_warnings===false ? '<b style="color:var(--pursue)">risk NOT in label</b>'
                  : lbl.event_in_warnings===true ? 'risk already in label' : '';
       const gf = s.generic_flag;
+      const pf = s.preemption_flag;
       const genBadge = gf ? `<span class="badge" style="background:#7d3c98" title="${gf.note.replace(/"/g,'&quot;')}">GENERIC · PREEMPTION</span>` : '';
-      const viabTxt = (gf && sc.viability_raw!=null) ? `${sc.viability}<span class="muted" style="font-size:12px"> (raw ${sc.viability_raw})</span>` : (sc.viability??'—');
+      const preBadge = pf ? `<span class="badge" style="background:#922b21" title="${pf.note.replace(/"/g,'&quot;')}">PMA · PREEMPTION</span>` : '';
+      const viabTxt = ((gf||pf) && sc.viability_raw!=null) ? `${sc.viability}<span class="muted" style="font-size:12px"> (raw ${sc.viability_raw})</span>` : (sc.viability??'—');
       const d=document.createElement('div'); d.className='card';
       d.innerHTML=`
         <span class="viab">${viabTxt}</span>
         <h3>${s.product} — ${s.event}
           <span class="badge" style="background:${recColor(sc.recommendation)}">${(sc.recommendation||'unscored').toUpperCase()}</span>
-          ${genBadge}
+          ${genBadge}${preBadge}
         </h3>
         <div class="stats">
           <span><b>${s.source.toUpperCase()}</b></span>
