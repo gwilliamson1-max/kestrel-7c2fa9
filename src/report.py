@@ -1,9 +1,17 @@
 """Outputs: docs/signals.json (dashboard data) and reports/memo HTML (email body)."""
+import html as _htmllib
 import json
 from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+DASHBOARD_URL = "https://gwilliamson1-max.github.io/kestrel-7c2fa9/"
+
+REC_COLOR = {"pursue": "#1e8449", "monitor": "#b7950b", "pass": "#909497"}
+
+
+def _esc(t):
+    return _htmllib.escape(str(t if t is not None else ""))
 
 
 def _ranked(signals):
@@ -37,62 +45,100 @@ def write_signals_json(signals: list, path=None):
     return path
 
 
+def _flag_blocks(s, sc):
+    """Coloured review / generic / preemption flag blocks (email-safe HTML)."""
+    out = []
+    review = getattr(s, "review", None)
+    if review:
+        out.append(("#7d3c98", "REVIEW", review.get("note", "")))
+    gen = getattr(s, "generic_flag", None)
+    if gen:
+        out.append(("#7d3c98", "GENERIC · PREEMPTION RISK", gen.get("note", "")))
+    pre = getattr(s, "preemption_flag", None)
+    if pre:
+        out.append(("#922b21", "PMA · PREEMPTION", pre.get("note", "")))
+    html = ""
+    for color, label, note in out:
+        html += (f'<div style="margin:8px 0;padding:8px 10px;border-left:4px solid '
+                 f'{color};background:#f6f0f4;font-size:13px;color:#333;line-height:1.5">'
+                 f'<b style="color:{color}">&#9873; {label}</b> &mdash; {_esc(note)}</div>')
+    return html
+
+
 def write_memo_html(signals: list, cfg, path=None):
-    """Self-contained HTML memo — used as the weekly email body."""
+    """Self-contained, email-safe HTML memo (inline styles only)."""
     top = _ranked(signals)[:cfg["thresholds"]["memo_top_n"]]
     today = date.today().isoformat()
-    rows = []
+    cards = []
     for i, s in enumerate(top, 1):
-        sc = s.score
+        sc = s.score or {}
         lit = (s.enrichment or {}).get("litigation") or {}
         pm = (s.enrichment or {}).get("pubmed") or {}
         lbl = (s.enrichment or {}).get("label") or {}
         warn = {True: "in label", False: "NOT in label", None: "n/a"}[
             lbl.get("event_in_warnings")]
-        traj = " → ".join(f"{q['prr']}" for q in (s.trajectory or []))
-        review = getattr(s, "review", None)
-        flag_line = f"\n            ⚑ REVIEW FLAG — {review['note']}\n" if review else ""
-        gen = getattr(s, "generic_flag", None)
-        if gen:
-            vr = sc.get("viability_raw")
-            adj = f" (raw {vr} → {sc.get('viability')})" if vr is not None else ""
-            flag_line += f"\n            ⚑ GENERIC — preemption risk{adj}; {gen['note']}\n"
-        pre = getattr(s, "preemption_flag", None)
-        if pre:
-            vr = sc.get("viability_raw")
-            adj = f" (raw {vr} → {sc.get('viability')})" if vr is not None else ""
-            flag_line += f"\n            ⚑ DEVICE PREEMPTION{adj}; {pre['note']}\n"
-        rows.append(f"""
-        \t{i}. {s.product} — {s.event}
-            viability {sc.get('viability')}/100
-            · {sc.get('recommendation', '').upper()}
-\t{s.source.upper()}\t{s.a} cases\tPRR {s.prr} (slope {s.prr_slope:+}/q)\tχ² {s.chi2}\tPubMed {pm.get('count', '?')}\tDockets {lit.get('docket_hits', '?')} · warning {warn}
-\t
-            PRR by quarter: {traj}
+        traj = " &rarr; ".join(f"{q['prr']}" for q in (s.trajectory or [])) or "&mdash;"
+        rec = sc.get("recommendation") or "unscored"
+        rec_color = REC_COLOR.get(rec, "#909497")
+        vr = sc.get("viability_raw")
+        viab = (f"{sc.get('viability')}/100"
+                + (f' <span style="color:#8a97a5;font-weight:400">(raw {vr})</span>'
+                   if vr is not None else ""))
+        defs = ", ".join(sc.get("likely_defendants") or []) or "n/a"
 
-            {sc.get('rationale', '')}
-{flag_line}
-            Likely defendants: {', '.join(sc.get('likely_defendants') or []) or 'n/a'}
+        cards.append(f"""
+      <tr><td style="padding:16px 0;border-top:1px solid #e3e8ee">
+        <table width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td style="font-size:16px;font-weight:700;color:#1b2733;vertical-align:top">
+            {i}. {_esc(s.product)} &mdash; {_esc(s.event)}</td>
+          <td align="right" style="vertical-align:top;white-space:nowrap;padding-left:12px">
+            <span style="color:#1a5276;font-size:16px;font-weight:700">{viab}</span>
+            <span style="background:{rec_color};color:#fff;border-radius:12px;
+              padding:2px 10px;font-size:12px;font-weight:700;margin-left:6px">
+              {_esc(rec.upper())}</span></td>
+        </tr></table>
+        <div style="font-size:13px;color:#5b6b7b;margin:8px 0">
+          {s.source.upper()} &middot; {s.a} cases &middot; PRR {s.prr}
+          (slope {s.prr_slope:+}/q) &middot; &chi;&sup2; {s.chi2}
+          &middot; PubMed {pm.get('count', '?')}
+          &middot; Dockets {lit.get('docket_hits', '?')} &middot; warning {warn}</div>
+        <div style="font-size:13px;color:#1a5276;font-family:Consolas,monospace;margin:4px 0">
+          PRR by quarter: {traj}</div>
+        <div style="font-size:14px;color:#222;margin:8px 0;line-height:1.55">
+          {_esc(sc.get('rationale', ''))}</div>
+        {_flag_blocks(s, sc)}
+        <div style="font-size:13px;color:#5b6b7b;margin-top:6px">
+          <b>Likely defendants:</b> {_esc(defs)}</div>
+      </td></tr>""")
 
-
-""")
-
-    html = f"""
-    Mass Tort Signal Memo — {today}
-
-    {len(signals)} signals passed the statistical screen; top
-    {len(top)} by litigation-viability score below. Full detail in the dashboard.
-
-
-{''.join(rows)}
-    Generated automatically. Statistics are
-    disproportionality screens, not causation. Attorney review required before
-    any action.
-"""
+    html_doc = f"""<!DOCTYPE html>
+<html><body style="margin:0;padding:0;background:#f7f9fb">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f7f9fb">
+<tr><td align="center">
+  <table width="720" cellpadding="0" cellspacing="0" style="max-width:720px;
+    background:#ffffff;font-family:'Segoe UI',Arial,sans-serif;margin:16px;
+    border:1px solid #e3e8ee;border-radius:10px">
+    <tr><td style="background:#1b2733;padding:18px 22px;border-radius:10px 10px 0 0">
+      <div style="font-size:20px;font-weight:700;color:#ffffff">Mass Tort Signal Memo</div>
+      <div style="color:#aab7c4;font-size:13px;margin-top:2px">{today}</div></td></tr>
+    <tr><td style="padding:16px 22px 0">
+      <p style="font-size:14px;color:#333;margin:0;line-height:1.5">
+        {len(signals)} signals passed the statistical screen; top {len(top)} by
+        litigation-viability score below.
+        <a href="{DASHBOARD_URL}" style="color:#1a5276;font-weight:600">Open the live dashboard &rarr;</a></p></td></tr>
+    <tr><td style="padding:0 22px">
+      <table width="100%" cellpadding="0" cellspacing="0">{''.join(cards)}</table></td></tr>
+    <tr><td style="padding:14px 22px 20px;color:#909497;font-size:11px;
+      border-top:1px solid #e3e8ee;line-height:1.5">
+      Generated automatically. Disproportionality statistics are hypothesis-generating
+      screens, not evidence of causation. Attorney review required before any action.</td></tr>
+  </table>
+</td></tr></table>
+</body></html>"""
 
     path = Path(path or ROOT / "reports" / f"memo_{today}.html")
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(html, encoding="utf-8")
+    path.write_text(html_doc, encoding="utf-8")
     # stable name the email workflow reads
-    (path.parent / "latest.html").write_text(html, encoding="utf-8")
+    (path.parent / "latest.html").write_text(html_doc, encoding="utf-8")
     return path
