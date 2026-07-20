@@ -19,6 +19,21 @@ Score each signal for LITIGATION VIABILITY, not medical interest. Consider:
    may fail to treat its own indication, and a disproportionality spike here is
    an artifact of the event being reported almost only for that drug. (Signals
    like this are normally removed before scoring, but flag any that reach you.)
+0b. KNOWN PROCEDURAL COMPLICATION / DEVICE MECHANISM (devices) — before anything
+   else, ask what the device is FOR and what routinely goes wrong with it. If the
+   event is (i) the device's own operating mechanism or the material it acts on
+   (an atherectomy or thrombectomy catheter reporting embolus/plaque debris; a
+   lithotripter reporting stone fragments), or (ii) a recognized complication
+   disclosed in the IFU and surgical consent (corneal edema or capsular tear after
+   phacoemulsification; periprosthetic fracture around a femoral stem; restenosis
+   in a stent), then it is NOT a failure-to-warn tort — the risk is already warned
+   about. Score viability BELOW 30 and recommend "pass" or at most "monitor".
+   Do NOT reason "severe + objective + no litigation = pursue" for these; the
+   absence of litigation reflects that everyone already knows about the risk, not
+   an untapped opportunity. The ONLY path to viability is a specific design defect
+   producing an EXCESS rate versus peer devices — if you assert that, say what
+   evidence would establish it. If you find yourself writing that an injury is a
+   "known complication" or "extensively disclosed", your score must be low.
 1. Injury severity and objectivity — severe, diagnosable, permanent injuries
    score high; subjective or transient complaints score near zero.
 2. Mechanism plausibility — is there a plausible biological/engineering

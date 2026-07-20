@@ -35,15 +35,36 @@ def main():
 
     sources = ["faers", "maude"] if args.source == "both" else [args.source]
 
-    all_signals = []
+    by_source = {}
     for src in sources:
         data = ingest.ingest(src, cfg, log=log)
         sigs = stats.screen(data, cfg, log=log)
-        all_signals.extend(sigs)
+        by_source[src] = sigs
 
-    # cap for trajectory + enrichment + LLM (ranked by EB05 then chi2)
-    all_signals.sort(key=lambda s: (s.eb05, s.chi2), reverse=True)
-    flagged = all_signals[:cfg["thresholds"]["max_flagged_for_enrichment"]]
+    # --- Per-source allocation --------------------------------------------- #
+    # EB05/PRR are not comparable across FAERS and MAUDE (MAUDE expected counts
+    # are structurally tiny, so device ratios dwarf drug ratios). Rank WITHIN
+    # each source and take a fixed quota, so drug signals can never be crowded
+    # out of the pipeline by devices.
+    mix = cfg.get("source_mix", {}) or {}
+    quota = {"faers": int(mix.get("enrich_faers", 70)),
+             "maude": int(mix.get("enrich_maude", 50))}
+    if args.max_flagged:            # testing override: cap each source
+        quota = {k: max(1, args.max_flagged // max(len(sources), 1))
+                 for k in quota}
+    flagged = []
+    for src, sigs in by_source.items():
+        sigs.sort(key=lambda s: (s.eb05, s.chi2), reverse=True)
+        take = sigs[:quota.get(src, 60)]
+        log(f"[{src}] {len(sigs)} screened -> {len(take)} taken for enrichment")
+        flagged.extend(take)
+
+    # --- Device known-complication screen (MAUDE) --------------------------- #
+    # Tier 1 (event IS the device's mechanism, e.g. atherectomy catheter /
+    # embolism) is dropped here; tier 2 (disclosed procedural complication) is
+    # flagged now and downweighted after scoring.
+    from . import device_screen
+    flagged, dev_dropped = device_screen.partition_and_flag(flagged, cfg, log=log)
 
     # --- False-positive screen, pass 1 (pre-enrichment) --------------------- #
     # Drops indication-confounded pairs (the "event" is the disease the drug
@@ -52,6 +73,7 @@ def main():
     # we're going to discard. Trajectory isn't computed yet, so the
     # spike/collapse quarterly check is deferred to pass 2.
     flagged, filtered = confounding.partition(flagged, cfg, log=log)
+    filtered += dev_dropped
 
     cache = {}
     for i, sig in enumerate(flagged, 1):
@@ -90,6 +112,11 @@ def main():
     n_preempt = preemption.apply_penalty(flagged, cfg, log=log)
     if n_preempt:
         log(f"[preemption] downweighted {n_preempt} PMA/Class-III device signals")
+
+    # --- Known-complication downweight (post-scoring, MAUDE tier 2) --------- #
+    n_known = device_screen.apply_penalty(flagged, cfg, log=log)
+    if n_known:
+        log(f"[device] downweighted {n_known} known-complication device signals")
 
     jpath = report.write_signals_json(flagged)
     mpath = report.write_memo_html(flagged, cfg)

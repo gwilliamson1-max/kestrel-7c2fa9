@@ -19,6 +19,25 @@ def _ranked(signals):
     return sorted(scored, key=lambda s: s.score.get("viability", 0), reverse=True)
 
 
+def _ranked_mixed(signals, cfg):
+    """Memo selection with a per-source quota. EB05/viability are not comparable
+    across FAERS and MAUDE (device expected counts are structurally tiny), so a
+    global sort lets devices crowd drugs out entirely. Take the top N from each
+    source separately, then order the combined set by viability."""
+    mix = (cfg or {}).get("source_mix", {}) or {}
+    want = {"faers": int(mix.get("memo_faers", 7)),
+            "maude": int(mix.get("memo_maude", 3))}
+    picked = []
+    for src, k in want.items():
+        picked += [s for s in _ranked(signals) if s.source == src][:k]
+    # backfill from anything left if a source came up short
+    total = int(cfg["thresholds"]["memo_top_n"])
+    if len(picked) < total:
+        rest = [s for s in _ranked(signals) if s not in picked]
+        picked += rest[:total - len(picked)]
+    return sorted(picked, key=lambda s: s.score.get("viability", 0), reverse=True)
+
+
 def _row(s):
     d = s.to_dict()
     r = getattr(s, "review", None)
@@ -30,6 +49,9 @@ def _row(s):
     p = getattr(s, "preemption_flag", None)
     if p:
         d["preemption_flag"] = p
+    dv = getattr(s, "device_flag", None)
+    if dv:
+        d["device_flag"] = dv
     return d
 
 
@@ -57,6 +79,9 @@ def _flag_blocks(s, sc):
     pre = getattr(s, "preemption_flag", None)
     if pre:
         out.append(("#922b21", "PMA · PREEMPTION", pre.get("note", "")))
+    dv = getattr(s, "device_flag", None)
+    if dv:
+        out.append(("#b9770e", "KNOWN COMPLICATION", dv.get("note", "")))
     html = ""
     for color, label, note in out:
         html += (f'<div style="margin:8px 0;padding:8px 10px;border-left:4px solid '
@@ -67,7 +92,7 @@ def _flag_blocks(s, sc):
 
 def write_memo_html(signals: list, cfg, path=None):
     """Self-contained, email-safe HTML memo (inline styles only)."""
-    top = _ranked(signals)[:cfg["thresholds"]["memo_top_n"]]
+    top = _ranked_mixed(signals, cfg)
     today = date.today().isoformat()
     cards = []
     for i, s in enumerate(top, 1):

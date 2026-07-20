@@ -78,11 +78,23 @@ def device_pathway(generic: str, cfg: dict | None = None) -> dict:
 
     pma_count = k510_count = None
     preempted = False
+    definition = ""
     if code:
         try:
             if klass == "3":
                 pma_count = openfda.total("/device/pma.json", f"product_code:{code}")
                 k510_count = openfda.total("/device/510k.json", f"product_code:{code}")
+        except Exception:
+            pass
+        try:
+            # FDA's own definition of what this device type IS — lets the scorer
+            # judge "is this event just what the device does?" for any device,
+            # not only the ones hard-coded in device_screen.py.
+            cd = openfda._get("/device/classification.json",
+                              {"search": f"product_code:{code}", "limit": 1})
+            res = (cd.get("results") or [{}])[0]
+            definition = (res.get("definition")
+                          or res.get("device_name") or "")[:600]
         except Exception:
             pass
 
@@ -105,7 +117,7 @@ def device_pathway(generic: str, cfg: dict | None = None) -> dict:
 
     res = {"product_code": code, "device_class": klass, "pma_count": pma_count,
            "k510_count": k510_count, "pathway": pathway, "preempted": preempted,
-           "evidence": evidence}
+           "evidence": evidence, "device_purpose": definition}
     _cache[key] = res
     return res
 
