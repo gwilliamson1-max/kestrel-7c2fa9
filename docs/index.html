@@ -78,10 +78,17 @@ function render() {
           <span><b>${s.source.toUpperCase()}</b></span>
           <span><b>${s.a}</b> cases</span>
           <span>PRR <b>${s.prr}</b> (slope ${s.prr_slope>0?'+':''}${s.prr_slope}/q)</span>
-          <span>ROR <b>${s.ror}</b></span> <span>χ² <b>${s.chi2}</b></span>
+          <span>χ² <b>${s.chi2}</b></span>
           <span>PubMed <b>${pm.count??'—'}</b></span>
           <span>Dockets <b>${lit.docket_hits??'—'}</b></span>
           <span>${warn}</span>
+        </div>
+        <div class="stats" style="margin-top:2px">
+          <span style="color:var(--accent)">EB05 <b>${s.eb05??'—'}</b></span>
+          <span>EBGM <b>${s.ebgm??'—'}</b></span>
+          <span>RRR <b>${s.rrr??'—'}</b> (exp ${s.expected??'—'})</span>
+          <span>IC025 <b>${s.ic025??'—'}</b></span>
+          <span>ROR025 <b>${s.ror025??'—'}</b></span>
         </div>
         <div class="spark">PRR by quarter: ${spark(s.trajectory)||'—'}</div>
         ${sc.rationale?`<div class="rationale">${sc.rationale}<br>
