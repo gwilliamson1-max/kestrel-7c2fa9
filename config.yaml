@@ -26,6 +26,36 @@ thresholds:
   # Final memo size
   memo_top_n: 10
 
+# Per-source allocation. EB05/PRR are NOT comparable across FAERS and MAUDE:
+# MAUDE device-problem pairs have tiny expected counts (a device's characteristic
+# failure mode is inherently concentrated), so nearly every device pair scores an
+# enormous ratio and would crowd every drug signal out of a global ranking.
+# Signals are therefore ranked WITHIN each source and allocated fixed slots.
+# Drugs get the larger share: they are usually the stronger mass-tort target and
+# MAUDE disproportionality is structurally noisier.
+source_mix:
+  memo_faers: 7        # drug slots in the memo
+  memo_maude: 3        # device slots in the memo
+  enrich_faers: 70     # per-source caps for trajectory + enrichment + scoring
+  enrich_maude: 50
+
+# Device known-complication screen (MAUDE) — src/device_screen.py.
+# The drug indication screen (confounding.py) reads /drug/label.json and does
+# nothing for devices, which let "atherectomy catheter / embolism" through.
+#   Tier 1 mechanism_events    -> DROP: the event is what the device does.
+#   Tier 2 known_complications -> DOWNWEIGHT + flag: disclosed procedural
+#     complication (weak failure-to-warn, still live as design-defect if a
+#     specific model shows an excess rate versus peers).
+# Built-in maps live in src/device_screen.py; anything added here is merged in.
+# Deliberately conservative — real device torts (metal-on-metal hip ion release,
+# mesh erosion, IVC filter fracture) are intentionally NOT listed.
+device_screen:
+  enabled: true
+  known_complication_penalty: 0.35
+  demote_to_monitor_below: 60
+  mechanism_events: {}      # e.g.  "laser, surgical": [thermal burn]
+  known_complications: {}   # e.g.  "prosthesis, shoulder": [loosening]
+
 # Empirical-Bayes + Bayesian disproportionality (src/ebgm.py, src/stats.py).
 # EB05 is the 5th percentile of the MGPS/DuMouchel posterior — the FDA-standard
 # reliability-adjusted signal score. Unlike PRR, it cannot be inflated by a single
