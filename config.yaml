@@ -26,6 +26,18 @@ thresholds:
   # Final memo size
   memo_top_n: 10
 
+# Empirical-Bayes + Bayesian disproportionality (src/ebgm.py, src/stats.py).
+# EB05 is the 5th percentile of the MGPS/DuMouchel posterior — the FDA-standard
+# reliability-adjusted signal score. Unlike PRR, it cannot be inflated by a single
+# lucky small count, so it kills tiny-denominator false positives at the source.
+# With eb05_gate on, a pair must clear the classic PRR/chi2 screen AND EB05 >= 2.
+# Also computed per pair (shown, not gated unless ic025_min is set): BCPNN IC/IC025,
+# ROR 95% CI lower bound (ror025), expected count, and RRR (observed/expected).
+bayesian:
+  eb05_gate: true
+  eb05_min: 2.0        # DuMouchel's recommended EBGM signal threshold
+  ic025_min: null      # optional extra gate on BCPNN IC025 (>=0 is WHO threshold); null = off
+
 # False-positive screen: indication confounding + implausible statistics.
 # Implemented in src/confounding.py; applied in run_pipeline.
 #   - Indication confounding: the "adverse event" is the disease the drug is
