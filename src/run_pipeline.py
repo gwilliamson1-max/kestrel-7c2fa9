@@ -38,12 +38,11 @@ def main():
     all_signals = []
     for src in sources:
         data = ingest.ingest(src, cfg, log=log)
-        sigs = stats.screen(data, cfg)
-        log(f"[{src}] {len(sigs)} pairs pass the statistical screen")
+        sigs = stats.screen(data, cfg, log=log)
         all_signals.extend(sigs)
 
-    # cap for trajectory + enrichment + LLM (ranked by chi2 within the screen)
-    all_signals.sort(key=lambda s: s.chi2, reverse=True)
+    # cap for trajectory + enrichment + LLM (ranked by EB05 then chi2)
+    all_signals.sort(key=lambda s: (s.eb05, s.chi2), reverse=True)
     flagged = all_signals[:cfg["thresholds"]["max_flagged_for_enrichment"]]
 
     # --- False-positive screen, pass 1 (pre-enrichment) --------------------- #

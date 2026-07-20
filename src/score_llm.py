@@ -32,7 +32,12 @@ Score each signal for LITIGATION VIABILITY, not medical interest. Consider:
 5. Trajectory — an accelerating PRR (positive slope) is more attractive than
    a flat-high signal that the plaintiffs' bar has already seen for years.
    But a PRR in the thousands, or one that spikes then collapses to zero, is a
-   near-zero-background artifact, not a real accelerating signal.
+   near-zero-background artifact, not a real accelerating signal. Trust EB05 and
+   IC025 over raw PRR here: EB05 (empirical-Bayes 5th percentile, EB05 >= 2 is the
+   FDA signal threshold) and IC025 (BCPNN lower bound, >= 0 is the WHO threshold)
+   are reliability-adjusted and cannot be inflated by a single small count. A high
+   PRR with EB05 barely above 2 is weak; a moderate PRR with EB05 well above 2 is
+   strong. All pairs you receive already cleared EB05 >= 2.
 6. Defendant solvency — note the likely manufacturer(s) and whether they are
    collectible (major pharma/device makers generally are).
 7. Generic availability / preemption — if enrichment.generic.available is true, a
@@ -67,6 +72,9 @@ def _payload(sig) -> dict:
     return {
         "source": sig.source, "product": sig.product, "event": sig.event,
         "cases": sig.a, "prr": sig.prr, "ror": sig.ror, "chi2": sig.chi2,
+        "expected": sig.expected, "rrr": sig.rrr,
+        "eb05": sig.eb05, "ebgm": sig.ebgm,
+        "ic025": sig.ic025, "ror025": sig.ror025,
         "prr_slope_per_quarter": sig.prr_slope,
         "quarterly": sig.trajectory,
         "enrichment": sig.enrichment,

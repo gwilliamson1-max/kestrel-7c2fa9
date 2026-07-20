@@ -102,6 +102,11 @@ def write_memo_html(signals: list, cfg, path=None):
           (slope {s.prr_slope:+}/q) &middot; &chi;&sup2; {s.chi2}
           &middot; PubMed {pm.get('count', '?')}
           &middot; Dockets {lit.get('docket_hits', '?')} &middot; warning {warn}</div>
+        <div style="font-size:13px;color:#5b6b7b;margin:4px 0">
+          <b style="color:#1a5276">EB05 {getattr(s, 'eb05', 0)}</b>
+          &middot; EBGM {getattr(s, 'ebgm', 0)} &middot; RRR {getattr(s, 'rrr', 0)}
+          (exp {getattr(s, 'expected', 0)}) &middot; IC025 {getattr(s, 'ic025', 0)}
+          &middot; ROR025 {getattr(s, 'ror025', 0)}</div>
         <div style="font-size:13px;color:#1a5276;font-family:Consolas,monospace;margin:4px 0">
           PRR by quarter: {traj}</div>
         <div style="font-size:14px;color:#222;margin:8px 0;line-height:1.55">
