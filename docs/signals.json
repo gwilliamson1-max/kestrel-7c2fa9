@@ -1,17 +1,17 @@
 {
- "generated": "2026-07-17",
+ "generated": "2026-07-20",
  "signals": [
   {
    "source": "maude",
    "product": "PROSTHESIS, HIP",
    "event": "Metal Related Pathology",
-   "a": 424,
-   "product_total": 2415,
-   "event_total": 1248,
-   "n": 1195386,
-   "prr": 254.19,
-   "ror": 308.1,
-   "chi2": 70506.41,
+   "a": 422,
+   "product_total": 2400,
+   "event_total": 1245,
+   "n": 1185596,
+   "prr": 252.79,
+   "ror": 306.51,
+   "chi2": 69868.03,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -70,15 +70,15 @@
     "injury_severity": 9,
     "mechanism_plausibility": 10,
     "label_gap": 9,
-    "crowding_penalty": 9,
+    "crowding_penalty": 2,
     "viability": 85,
     "recommendation": "pursue",
-    "rationale": "Metal-on-metal hip prostheses causing metallosis, pseudotumor, tissue necrosis is well-established, severe, and objectively diagnosable. Class II device, not preempted. Accelerating PRR (+49/quarter) suggests ongoing injuries despite prior waves of litigation (DePuy ASR, Stryker Rejuvenate settled). Zero hits in this dataset may reflectquery scope; the tort is proven, but crowding is real. Pursue if signal tied to a newer MoM design or resurfacing system not yet in MDL. Likely defendants are DePuy, Zimmer, Smith & Nephew, Stryker.",
+    "rationale": "Metal-related pathology (metallosis, ALVAL, pseudotumor) is a severe, permanent, diagnosable injury with established mechanism (metal-on-metal wear debris, hypersensitivity). Class 2 device (510(k)) avoids Riegel preemption. The PRR is strongly accelerating (slope +49.17), peaking at 339 in 2026Q2, with 422 cases. No existing litigation hits suggest this is a greenfield opportunity. This mirrors the metal-on-metal hip MDLs (DePuy ASR, Stryker Rejuvenate) that produced billions in settlements. Highly viable; immediate case development warranted.",
     "likely_defendants": [
-     "DePuy (Johnson & Johnson)",
+     "DePuy Synthes (J&J)",
+     "Stryker",
      "Zimmer Biomet",
-     "Smith & Nephew",
-     "Stryker"
+     "Smith & Nephew"
     ]
    }
   },
@@ -87,12 +87,12 @@
    "product": "PROSTHESIS, HIP",
    "event": "High metal ion levels",
    "a": 213,
-   "product_total": 2415,
+   "product_total": 2400,
    "event_total": 336,
-   "n": 1195386,
-   "prr": 855.44,
-   "ror": 938.09,
-   "chi2": 66250.77,
+   "n": 1185596,
+   "prr": 853.73,
+   "ror": 936.78,
+   "chi2": 66118.44,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -155,18 +155,98 @@
    "score": {
     "product": "PROSTHESIS, HIP",
     "event": "High metal ion levels",
-    "injury_severity": 9,
+    "injury_severity": 7,
     "mechanism_plausibility": 10,
     "label_gap": 9,
-    "crowding_penalty": 9,
-    "viability": 85,
+    "crowding_penalty": 5,
+    "viability": 80,
     "recommendation": "pursue",
-    "rationale": "Elevated serum metal ions (cobalt, chromium) from metal-on-metal hip prostheses is the hallmark of metallosis litigation\u2014severe, objective (blood-test-confirmed), and causally linked to pseudotumor, tissue necrosis, systemic toxicity. Class II device, not preempted. Accelerating PRR (+128/quarter) and the recent spike to PRR 1165 in 2026Q2 suggest ongoing failures. One litigation hit (Andrews v. DePuy 2015) confirms the tort exists but is not saturated. Pursue, especially if tied to newer MoM designs or dual-modular necks.",
+    "rationale": "Elevated metal ions (cobalt, chromium) are objective, diagnosable biomarkers of metal-on-metal hip wear, linked to metallosis, cardiomyopathy, and neurologic injury. Class 2 device (510(k)) avoids Riegel preemption. The PRR is strongly accelerating (slope +128.82), peaking at 1165 in 2026Q2. One litigation hit (Andrews v. DePuy, 2015) suggests early plaintiff activity but not crowding. This is a companion signal to the Metal Related Pathology signal above and validates the metal-on-metal hip theory. Pursue aggressively; cobalt toxicity is a severe and under-litigated sequela.",
     "likely_defendants": [
-     "DePuy (Johnson & Johnson)",
-     "Zimmer Biomet",
+     "DePuy Synthes (J&J)",
      "Stryker",
+     "Zimmer Biomet",
      "Smith & Nephew"
+    ]
+   }
+  },
+  {
+   "source": "maude",
+   "product": "UNIT, PHACOFRAGMENTATION",
+   "event": "Capsular Bag Tear",
+   "a": 94,
+   "product_total": 379,
+   "event_total": 449,
+   "n": 1185596,
+   "prr": 828.05,
+   "ror": 1100.84,
+   "chi2": 60763.58,
+   "trajectory": [
+    {
+     "quarter": "2025Q1",
+     "a": 12,
+     "prr": 824.99
+    },
+    {
+     "quarter": "2025Q2",
+     "a": 16,
+     "prr": 281.14
+    },
+    {
+     "quarter": "2025Q3",
+     "a": 16,
+     "prr": 673.2
+    },
+    {
+     "quarter": "2025Q4",
+     "a": 28,
+     "prr": 758.57
+    },
+    {
+     "quarter": "2026Q1",
+     "a": 12,
+     "prr": 614.8
+    },
+    {
+     "quarter": "2026Q2",
+     "a": 42,
+     "prr": 1152.16
+    }
+   ],
+   "prr_slope": 65.43,
+   "enrichment": {
+    "pubmed": {
+     "count": 0,
+     "titles": []
+    },
+    "preemption": {
+     "product_code": "HQC",
+     "device_class": "2",
+     "pma_count": null,
+     "k510_count": null,
+     "pathway": "Class 2 (510(k)/exempt)",
+     "preempted": false,
+     "evidence": "Class 2 device (code HQC) \u2014 510(k)/exempt pathway; Lohr, not preempted"
+    },
+    "litigation": {
+     "docket_hits": 0,
+     "sample_cases": []
+    }
+   },
+   "score": {
+    "product": "UNIT, PHACOFRAGMENTATION",
+    "event": "Capsular Bag Tear",
+    "injury_severity": 7,
+    "mechanism_plausibility": 9,
+    "label_gap": 7,
+    "crowding_penalty": 10,
+    "viability": 75,
+    "recommendation": "pursue",
+    "rationale": "Capsular bag tear during cataract surgery is a serious complication requiring immediate intervention and potentially permanent vision consequences (retained lens material, vitreous loss, secondary glaucoma). The mechanism is direct and plausible: phacofragmentation devices (ultrasonic/laser handpieces) can mechanically rupture the capsule. This is a Class 2 device (510(k) pathway), so Riegel preemption does NOT apply\u2014state failure-to-warn and design-defect claims survive. The PRR is accelerating sharply (slope +65.43, spiking to 1152 in 2026Q2), suggesting an emerging problem rather than baseline risk. Zero existing litigation and no PubMed attention mean you are early. This signal warrants immediate investigation into specific device models and manufacturers.",
+    "likely_defendants": [
+     "Alcon (Centurion, Infiniti systems)",
+     "Johnson & Johnson Vision (Whitestar)",
+     "Bausch + Lomb (Stellaris)"
     ]
    }
   },
@@ -174,13 +254,13 @@
    "source": "faers",
    "product": "DULAGLUTIDE",
    "event": "IMPAIRED GASTRIC EMPTYING",
-   "a": 700,
-   "product_total": 1762,
-   "event_total": 1770,
-   "n": 493414,
-   "prr": 182.54,
-   "ror": 302.2,
-   "chi2": 76566.33,
+   "a": 688,
+   "product_total": 1736,
+   "event_total": 1685,
+   "n": 487616,
+   "prr": 193.14,
+   "ror": 319.28,
+   "chi2": 77967.52,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -239,8 +319,8 @@
     "generic": {
      "available": false,
      "categories": {
-      "DRUG FOR FURTHER PROCESSING": 7,
       "BLA": 11,
+      "DRUG FOR FURTHER PROCESSING": 7,
       "BULK INGREDIENT": 3,
       "BULK INGREDIENT FOR HUMAN PRESCRIPTION COMPOUNDING": 1
      },
@@ -292,16 +372,16 @@
        "docket_id": 69620227
       },
       {
-       "caseName": "TERRY v. ELI LILLY AND COMPANY",
-       "court": "District Court, E.D. Pennsylvania",
-       "dateFiled": "2024-09-09",
-       "docket_id": 69144735
-      },
-      {
        "caseName": "LOPEZ-PERALES v. NOVO NORDISK A/S",
        "court": "District Court, E.D. Pennsylvania",
        "dateFiled": "2025-04-30",
        "docket_id": 70001310
+      },
+      {
+       "caseName": "TERRY v. ELI LILLY AND COMPANY",
+       "court": "District Court, E.D. Pennsylvania",
+       "dateFiled": "2024-09-09",
+       "docket_id": 69144735
       },
       {
        "caseName": "LOOPER v. NOVO NORDISK A/S",
@@ -315,269 +395,16 @@
    "score": {
     "product": "DULAGLUTIDE",
     "event": "IMPAIRED GASTRIC EMPTYING",
-    "injury_severity": 7,
-    "mechanism_plausibility": 9,
-    "label_gap": 9,
-    "crowding_penalty": 3,
-    "viability": 75,
-    "recommendation": "pursue",
-    "rationale": "GLP-1 agonists delay gastric emptying via known pharmacology (gastroparesis). Injury is severe (aspiration risk, nutritional deficits, chronic pain). Label found but event NOT in warnings (label_gap = 9). Biologics (no true generic), so brand theory intact. Existing MDL (114 docket hits, E.D. Pa. streamlined docket as of Jan 2026) validates the tort, but moderate case count suggests early innings. Two recent PubMed hits confirm clinical attention. Strong viability; pursue intake and monitor MDL growth.",
-    "likely_defendants": [
-     "Eli Lilly"
-    ]
-   }
-  },
-  {
-   "source": "maude",
-   "product": "POSITIONER, TOOTH, PREFORMED",
-   "event": "Deformity/ Disfigurement",
-   "a": 734,
-   "product_total": 898,
-   "event_total": 9588,
-   "n": 1195386,
-   "prr": 110.27,
-   "ror": 599.33,
-   "chi2": 73885.03,
-   "trajectory": [
-    {
-     "quarter": "2025Q1",
-     "a": 95,
-     "prr": 50.95
-    },
-    {
-     "quarter": "2025Q2",
-     "a": 58,
-     "prr": 57.62
-    },
-    {
-     "quarter": "2025Q3",
-     "a": 74,
-     "prr": 101.74
-    },
-    {
-     "quarter": "2025Q4",
-     "a": 61,
-     "prr": 96.01
-    },
-    {
-     "quarter": "2026Q1",
-     "a": 593,
-     "prr": 74.03
-    },
-    {
-     "quarter": "2026Q2",
-     "a": 16,
-     "prr": 113.08
-    }
-   ],
-   "prr_slope": 12.43,
-   "enrichment": {
-    "pubmed": {
-     "count": 0,
-     "titles": []
-    },
-    "preemption": {
-     "product_code": "KMY",
-     "device_class": "1",
-     "pma_count": null,
-     "k510_count": null,
-     "pathway": "Class 1 (510(k)/exempt)",
-     "preempted": false,
-     "evidence": "Class 1 device (code KMY) \u2014 510(k)/exempt pathway; Lohr, not preempted"
-    },
-    "litigation": {
-     "docket_hits": 0,
-     "sample_cases": []
-    }
-   },
-   "score": {
-    "product": "POSITIONER, TOOTH, PREFORMED",
-    "event": "Deformity/ Disfigurement",
-    "injury_severity": 8,
-    "mechanism_plausibility": 7,
-    "label_gap": 9,
-    "crowding_penalty": 10,
-    "viability": 75,
-    "recommendation": "pursue",
-    "rationale": "Clear-aligner/orthodontic-positioner devices causing facial or dental deformity is a severe, objective, permanent injury with plausible mechanism (improper force vectors, non-customized fit, lack of professional oversight). Class I device, not preempted. Zero existing litigation, accelerating PRR (slope +12.43/quarter), and event not in warnings create a clean failure-to-warn opening. Likely defendants are Align Technology (Invisalign), SmileDirectClub, and other direct-to-consumer aligner manufacturers\u2014collectible and exposed.",
-    "likely_defendants": [
-     "Align Technology",
-     "SmileDirectClub",
-     "Candid",
-     "Byte"
-    ]
-   }
-  },
-  {
-   "source": "maude",
-   "product": "SURGICAL MESH",
-   "event": "Adhesion(s)",
-   "a": 315,
-   "product_total": 1205,
-   "event_total": 1085,
-   "n": 1195386,
-   "prr": 405.42,
-   "ror": 548.55,
-   "chi2": 89978.58,
-   "trajectory": [
-    {
-     "quarter": "2025Q1",
-     "a": 56,
-     "prr": 158.66
-    },
-    {
-     "quarter": "2025Q2",
-     "a": 72,
-     "prr": 241.93
-    },
-    {
-     "quarter": "2025Q3",
-     "a": 82,
-     "prr": 342.28
-    },
-    {
-     "quarter": "2025Q4",
-     "a": 72,
-     "prr": 419.16
-    },
-    {
-     "quarter": "2026Q1",
-     "a": 122,
-     "prr": 584.98
-    },
-    {
-     "quarter": "2026Q2",
-     "a": 57,
-     "prr": 280.95
-    }
-   ],
-   "prr_slope": 24.46,
-   "enrichment": {
-    "pubmed": {
-     "count": 1,
-     "titles": [
-      {
-       "pmid": "23780573",
-       "title": "An in vitro study assessing the effect of mesh morphology and suture fixation on bacterial adherence.",
-       "date": "2013 Dec"
-      }
-     ]
-    },
-    "preemption": {
-     "product_code": "FTL",
-     "device_class": "2",
-     "pma_count": null,
-     "k510_count": null,
-     "pathway": "Class 2 (510(k)/exempt)",
-     "preempted": false,
-     "evidence": "Class 2 device (code FTL) \u2014 510(k)/exempt pathway; Lohr, not preempted"
-    },
-    "litigation": {
-     "docket_hits": 1,
-     "sample_cases": [
-      {
-       "caseName": "In re: Boston Scientific Corp. Pelvic Repair System Products Liability Litigation",
-       "court": "District Court, S.D. West Virginia",
-       "dateFiled": "2012-02-07",
-       "docket_id": 4414516
-      }
-     ]
-    }
-   },
-   "score": {
-    "product": "SURGICAL MESH",
-    "event": "Adhesion(s)",
     "injury_severity": 6,
     "mechanism_plausibility": 9,
-    "label_gap": 7,
-    "crowding_penalty": 5,
-    "viability": 60,
+    "label_gap": 9,
+    "crowding_penalty": 4,
+    "viability": 65,
     "recommendation": "monitor",
-    "rationale": "Class 2 device (not preempted), accelerating PRR (+24/quarter, 159\u2192585), moderate case volume (315). Adhesions are plausible mesh complications (foreign body, peritoneal irritation), can cause bowel obstruction/chronic pain. One existing MDL (Boston Scientific pelvic mesh) but mesh tort is crowded space. This signal may reflect hernia mesh or other product line. Monitor for specific product identification and whether adhesions are already warned; if label-silent and trajectory continues, consider pursuit.",
+    "rationale": "Impaired gastric emptying (gastroparesis) from GLP-1 agonists is a mechanistically plausible and severe injury, supported by two recent publications and a label gap (not in warnings despite boxed warning). The 114 docket hits and streamlined MDL in E.D. Pa. confirm active litigation, but the collapse to zero PRR in 2026Q2 suggests either data artifact or case exhaustion. As a biologic, no generic preemption applies. The tort is crowded but not saturated; you are late but not locked out. Viability depends on whether plaintiffs can show inadequate pre-2024 warnings and ongoing brand exposure. Worth monitoring for settlement developments.",
     "likely_defendants": [
-     "Ethicon (J&J)",
-     "Medtronic",
-     "Bard/BD"
-    ]
-   }
-  },
-  {
-   "source": "maude",
-   "product": "PORT & CATHETER, IMPLANTED, SUBCUTANEOUS, INTRAVASCULAR",
-   "event": "Thrombosis/Thrombus",
-   "a": 1114,
-   "product_total": 3340,
-   "event_total": 5407,
-   "n": 1195386,
-   "prr": 92.61,
-   "ror": 138.46,
-   "chi2": 80445.99,
-   "trajectory": [
-    {
-     "quarter": "2025Q1",
-     "a": 123,
-     "prr": 77.64
-    },
-    {
-     "quarter": "2025Q2",
-     "a": 252,
-     "prr": 83.36
-    },
-    {
-     "quarter": "2025Q3",
-     "a": 305,
-     "prr": 96.13
-    },
-    {
-     "quarter": "2025Q4",
-     "a": 349,
-     "prr": 90.06
-    },
-    {
-     "quarter": "2026Q1",
-     "a": 228,
-     "prr": 82.22
-    },
-    {
-     "quarter": "2026Q2",
-     "a": 276,
-     "prr": 106.35
-    }
-   ],
-   "prr_slope": 5.74,
-   "enrichment": {
-    "pubmed": {
-     "count": 0,
-     "titles": []
-    },
-    "preemption": {
-     "product_code": "LJT",
-     "device_class": "2",
-     "pma_count": null,
-     "k510_count": null,
-     "pathway": "Class 2 (510(k)/exempt)",
-     "preempted": false,
-     "evidence": "Class 2 device (code LJT) \u2014 510(k)/exempt pathway; Lohr, not preempted"
-    },
-    "litigation": {
-     "docket_hits": 0,
-     "sample_cases": []
-    }
-   },
-   "score": {
-    "product": "PORT & CATHETER, IMPLANTED, SUBCUTANEOUS, INTRAVASCULAR",
-    "event": "Thrombosis/Thrombus",
-    "injury_severity": 8,
-    "mechanism_plausibility": 9,
-    "label_gap": 7,
-    "crowding_penalty": 10,
-    "viability": 55,
-    "recommendation": "monitor",
-    "rationale": "Thrombosis is a severe, diagnosable injury with strong plausibility (intravascular foreign body, endothelial activation). Class 2 device, not preempted. PRR shows modest upward trend (77\u2192106). However, thrombosis is a known complication of all central venous catheters, likely in every IFU/label. No existing litigation despite high case volume (1114) suggests plaintiffs' bar has evaluated and passed, possibly due to informed-consent defenses or lack of label gap. Moderate viability justifies monitoring for new litigation or signal evolution.",
-    "likely_defendants": [
-     "Bard/BD",
-     "AngioDynamics",
-     "Smiths Medical"
+     "Eli Lilly",
+     "Novo Nordisk"
     ]
    }
   },
@@ -587,11 +414,11 @@
    "event": "Urinary Tract Infection",
    "a": 125,
    "product_total": 197,
-   "event_total": 1310,
-   "n": 1195386,
-   "prr": 639.97,
-   "ror": 1749.3,
-   "chi2": 71639.02,
+   "event_total": 1302,
+   "n": 1185596,
+   "prr": 639.05,
+   "ror": 1746.76,
+   "chi2": 71488.62,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -693,15 +520,111 @@
    "score": {
     "product": "PUREWICK",
     "event": "Urinary Tract Infection",
-    "injury_severity": 4,
-    "mechanism_plausibility": 8,
-    "label_gap": 9,
+    "cases": 125,
+    "injury_severity": 5,
+    "mechanism_plausibility": 9,
+    "label_gap": 8,
     "crowding_penalty": 7,
-    "viability": 55,
+    "viability": 60,
     "recommendation": "monitor",
-    "rationale": "PureWick external female urinary-collection device causing UTIs is plausible (moisture retention, bacterial colonization, improper use). Class I device, not preempted. Accelerating PRR (+136/quarter), event not in warnings, and recent adverse-event literature (2025) support the signal. However, UTI is transient and treatable, limiting damages. Existing litigation is IP disputes (PureWick suing competitors), not product-liability MDL. Monitor for clusters of severe UTI sequelae (sepsis, pyelonephritis) or wrongful death.",
+    "rationale": "UTI is a diagnosable, common healthcare-associated infection with high mechanism plausibility (external catheter design, bacterial colonization). Class 1 device (510(k)-exempt) avoids Riegel preemption, opening design-defect and failure-to-warn claims. The PRR is accelerating sharply (slope +136.21), and the signal is new (first cases 2025Q3). Four litigation hits include one product-liability case (Lucas v. BD PureWick, 2023), suggesting early plaintiff interest. However, UTI severity is moderate and often treatable, limiting damages. Monitor for aggregation and severity escalation (sepsis, death).",
     "likely_defendants": [
-     "BD (PureWick Corporation)"
+     "BD (Becton Dickinson) PureWick Corporation"
+    ]
+   }
+  },
+  {
+   "source": "maude",
+   "product": "SURGICAL MESH",
+   "event": "Adhesion(s)",
+   "a": 307,
+   "product_total": 1194,
+   "event_total": 1064,
+   "n": 1185596,
+   "prr": 402.29,
+   "ror": 541.18,
+   "chi2": 87224.26,
+   "trajectory": [
+    {
+     "quarter": "2025Q1",
+     "a": 56,
+     "prr": 158.66
+    },
+    {
+     "quarter": "2025Q2",
+     "a": 72,
+     "prr": 241.93
+    },
+    {
+     "quarter": "2025Q3",
+     "a": 82,
+     "prr": 342.28
+    },
+    {
+     "quarter": "2025Q4",
+     "a": 72,
+     "prr": 419.16
+    },
+    {
+     "quarter": "2026Q1",
+     "a": 122,
+     "prr": 584.98
+    },
+    {
+     "quarter": "2026Q2",
+     "a": 57,
+     "prr": 280.95
+    }
+   ],
+   "prr_slope": 24.46,
+   "enrichment": {
+    "pubmed": {
+     "count": 1,
+     "titles": [
+      {
+       "pmid": "23780573",
+       "title": "An in vitro study assessing the effect of mesh morphology and suture fixation on bacterial adherence.",
+       "date": "2013 Dec"
+      }
+     ]
+    },
+    "preemption": {
+     "product_code": "FTL",
+     "device_class": "2",
+     "pma_count": null,
+     "k510_count": null,
+     "pathway": "Class 2 (510(k)/exempt)",
+     "preempted": false,
+     "evidence": "Class 2 device (code FTL) \u2014 510(k)/exempt pathway; Lohr, not preempted"
+    },
+    "litigation": {
+     "docket_hits": 1,
+     "sample_cases": [
+      {
+       "caseName": "In re: Boston Scientific Corp. Pelvic Repair System Products Liability Litigation",
+       "court": "District Court, S.D. West Virginia",
+       "dateFiled": "2012-02-07",
+       "docket_id": 4414516
+      }
+     ]
+    }
+   },
+   "score": {
+    "product": "SURGICAL MESH",
+    "event": "Adhesion(s)",
+    "cases": 307,
+    "injury_severity": 6,
+    "mechanism_plausibility": 8,
+    "label_gap": 7,
+    "crowding_penalty": 5,
+    "viability": 55,
+    "recommendation": "pursue",
+    "rationale": "Surgical mesh (Class 2, 510(k), not preempted) causing adhesions is a serious, diagnosable injury requiring revision surgery. Mechanism is plausible: mesh integration with tissue can cause bowel obstruction or chronic pain. Strong positive PRR trajectory (+24.46/quarter) signals accelerating reports. One existing MDL (Boston Scientific pelvic mesh) validates the mesh-tort framework, but adhesions may be a distinct theory. Label gap appears open. Solvency is high (Boston Scientific, Ethicon). This merits active investigation.",
+    "likely_defendants": [
+     "Boston Scientific",
+     "Ethicon (Johnson & Johnson)",
+     "C.R. Bard",
+     "Covidien"
     ]
    }
   },
@@ -709,13 +632,13 @@
    "source": "maude",
    "product": "CONTINUOUS GLUCOSE MONITOR",
    "event": "Loss of consciousness",
-   "a": 1494,
-   "product_total": 6552,
-   "event_total": 6190,
-   "n": 1195386,
-   "prr": 57.73,
-   "ror": 74.48,
-   "chi2": 63465.31,
+   "a": 1479,
+   "product_total": 6500,
+   "event_total": 6129,
+   "n": 1185596,
+   "prr": 57.7,
+   "ror": 74.4,
+   "chi2": 62798.11,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -833,14 +756,15 @@
     "product": "CONTINUOUS GLUCOSE MONITOR",
     "event": "Loss of consciousness",
     "injury_severity": 9,
-    "mechanism_plausibility": 7,
-    "label_gap": 6,
+    "mechanism_plausibility": 8,
+    "label_gap": 5,
     "crowding_penalty": 4,
     "viability": 55,
-    "recommendation": "pursue",
-    "rationale": "Loss of consciousness from CGM failure (missed hypoglycemia alerts, sensor inaccuracy) is severe, objective, and mechanistically plausible. Class 2 device avoids Riegel preemption. Twenty litigation hits with recent 2025-2026 filings (Grisoli v. DexCom, Taylor v. Abbott) indicate emerging tort activity but not yet MDL-level crowding. Flat-to-stable PRR trajectory (~50-70) over six quarters shows sustained signal without artifact collapse. Major collectible defendants (DexCom, Abbott) are in the market.",
+    "recommendation": "monitor",
+    "rationale": "Loss of consciousness in diabetic patients using CGMs is a severe injury, plausibly linked to device failure to alert on hypoglycemia (false-negative alarm). The PRR is stable (~50-70), not artifact, and the signal is accelerating slightly. The device is Class 2 (not preempted). Litigation exists (Grisoli v. DexCom 2025-26, Taylor v. Abbott 2026), suggesting early momentum but not yet crowding. The label likely covers hypoglycemia risk, weakening failure-to-warn, but manufacturing defect or alarm-failure theories survive. This is monitor-worthy; if the recent cases gain traction, pursue.",
     "likely_defendants": [
-     "DexCom, Abbott Diabetes Care, Medtronic"
+     "DexCom",
+     "Abbott Diabetes Care"
     ]
    }
   },
@@ -848,13 +772,13 @@
    "source": "maude",
    "product": "CATHETER, SEPTOSTOMY",
    "event": "Pericardial Effusion",
-   "a": 355,
-   "product_total": 484,
-   "event_total": 3994,
-   "n": 1195386,
-   "prr": 240.84,
-   "ror": 900.87,
-   "chi2": 77293.91,
+   "a": 354,
+   "product_total": 481,
+   "event_total": 3968,
+   "n": 1185596,
+   "prr": 241.34,
+   "ror": 911.27,
+   "chi2": 77208.74,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -911,75 +835,75 @@
     "product": "CATHETER, SEPTOSTOMY",
     "event": "Pericardial Effusion",
     "injury_severity": 9,
-    "mechanism_plausibility": 8,
-    "label_gap": 6,
+    "mechanism_plausibility": 10,
+    "label_gap": 5,
     "crowding_penalty": 10,
-    "viability": 50,
+    "viability": 40,
     "recommendation": "monitor",
-    "rationale": "Pericardial effusion is a serious injury (cardiac tamponade risk). Septostomy catheters (used in congenital heart disease) mechanically traverse the atrial septum, so pericardial perforation is a plausible complication. Class 2, not preempted. PRR declining but remains high (349\u2192245). No litigation despite 355 cases. The procedure's narrow indication (neonatal/palliative) limits plaintiff pool. Monitor for any shift to adult populations or new product generations with worse safety profiles.",
+    "rationale": "Pericardial effusion is a serious, life-threatening complication of septostomy catheters used in neonates/infants with congenital heart defects. The PRR is extremely high (241) with negative slope, suggesting either a manufacturing/design issue or procedural complication rather than a new signal. Class 2 device avoids Riegel, but zero litigation and literature indicate the injury may be a known procedural risk or too niche for mass tort. The severity and mechanism support viability if a design defect or inadequate instruction-for-use claim emerges, but current evidence is thin.",
     "likely_defendants": [
-     "Edwards Lifesciences",
-     "Cook Medical"
+     "NuMED",
+     "Edwards Lifesciences"
     ]
    }
   },
   {
    "source": "maude",
-   "product": "UNIT, PHACOFRAGMENTATION",
-   "event": "Capsular Bag Tear",
-   "a": 96,
-   "product_total": 382,
-   "event_total": 453,
-   "n": 1195386,
-   "prr": 841.22,
-   "ror": 1123.25,
-   "chi2": 62854.9,
+   "product": "PORT & CATHETER, IMPLANTED, SUBCUTANEOUS, INTRAVASCULAR",
+   "event": "Thrombosis/Thrombus",
+   "a": 1109,
+   "product_total": 3326,
+   "event_total": 5369,
+   "n": 1185596,
+   "prr": 92.54,
+   "ror": 138.33,
+   "chi2": 79965.15,
    "trajectory": [
     {
      "quarter": "2025Q1",
-     "a": 12,
-     "prr": 824.99
+     "a": 123,
+     "prr": 77.64
     },
     {
      "quarter": "2025Q2",
-     "a": 16,
-     "prr": 281.14
+     "a": 252,
+     "prr": 83.36
     },
     {
      "quarter": "2025Q3",
-     "a": 16,
-     "prr": 673.2
+     "a": 305,
+     "prr": 96.13
     },
     {
      "quarter": "2025Q4",
-     "a": 28,
-     "prr": 758.57
+     "a": 349,
+     "prr": 90.06
     },
     {
      "quarter": "2026Q1",
-     "a": 12,
-     "prr": 614.8
+     "a": 228,
+     "prr": 82.22
     },
     {
      "quarter": "2026Q2",
-     "a": 42,
-     "prr": 1152.16
+     "a": 276,
+     "prr": 106.35
     }
    ],
-   "prr_slope": 65.43,
+   "prr_slope": 5.74,
    "enrichment": {
     "pubmed": {
      "count": 0,
      "titles": []
     },
     "preemption": {
-     "product_code": "HQC",
+     "product_code": "LJT",
      "device_class": "2",
      "pma_count": null,
      "k510_count": null,
      "pathway": "Class 2 (510(k)/exempt)",
      "preempted": false,
-     "evidence": "Class 2 device (code HQC) \u2014 510(k)/exempt pathway; Lohr, not preempted"
+     "evidence": "Class 2 device (code LJT) \u2014 510(k)/exempt pathway; Lohr, not preempted"
     },
     "litigation": {
      "docket_hits": 0,
@@ -987,158 +911,66 @@
     }
    },
    "score": {
-    "product": "UNIT, PHACOFRAGMENTATION",
-    "event": "Capsular Bag Tear",
-    "injury_severity": 6,
+    "product": "PORT & CATHETER, IMPLANTED, SUBCUTANEOUS, INTRAVASCULAR",
+    "event": "Thrombosis/Thrombus",
+    "injury_severity": 7,
     "mechanism_plausibility": 9,
-    "label_gap": 7,
-    "crowding_penalty": 10,
-    "viability": 40,
-    "recommendation": "monitor",
-    "rationale": "Capsular bag tear during cataract surgery (phacoemulsification) is a recognized surgical complication with plausible device-related causes (excessive ultrasonic energy, probe design). Class 2 device avoids preemption. Positive PRR slope (+65.43) and spike to 1,152 in 2026Q2 suggest accelerating signal. However, extremely high PRRs (800+) with low absolute case counts (96 total) indicate near-zero background, raising artifact concern. Zero litigation hits and difficulty distinguishing device defect from surgical technique/patient factors limit immediate viability. Worth monitoring for case accumulation.",
-    "likely_defendants": [
-     "Alcon, Johnson & Johnson Vision, Bausch + Lomb"
-    ]
-   }
-  },
-  {
-   "source": "maude",
-   "product": "DENTAL IMPLANT",
-   "event": "Inadequate Osseointegration",
-   "a": 6211,
-   "product_total": 41414,
-   "event_total": 15266,
-   "n": 1195386,
-   "prr": 19.11,
-   "ror": 22.31,
-   "chi2": 64043.29,
-   "trajectory": [
-    {
-     "quarter": "2025Q1",
-     "a": 1922,
-     "prr": 33.78
-    },
-    {
-     "quarter": "2025Q2",
-     "a": 875,
-     "prr": 15.36
-    },
-    {
-     "quarter": "2025Q3",
-     "a": 1953,
-     "prr": 54.5
-    },
-    {
-     "quarter": "2025Q4",
-     "a": 853,
-     "prr": 6.79
-    },
-    {
-     "quarter": "2026Q1",
-     "a": 2509,
-     "prr": 31.72
-    },
-    {
-     "quarter": "2026Q2",
-     "a": 1340,
-     "prr": 14.95
-    }
-   ],
-   "prr_slope": -3.77,
-   "enrichment": {
-    "pubmed": {
-     "count": 3,
-     "titles": [
-      {
-       "pmid": "40439262",
-       "title": "Bioinspired Amine-Guided Polyphenol Coatings for Selective Bacterial Disruption and Osseointegration on Orthopedic Implants.",
-       "date": "2025 Jun 11"
-      },
-      {
-       "pmid": "39590543",
-       "title": "Propolis in Dental Implantology: A Systematic Review of Its Effects and Benefits.",
-       "date": "2024 Nov 12"
-      },
-      {
-       "pmid": "34684930",
-       "title": "Dental Implant Nano-Engineering: Advances, Limitations and Future Directions.",
-       "date": "2021 Sep 24"
-      }
-     ]
-    },
-    "preemption": {
-     "product_code": "DZE",
-     "device_class": "2",
-     "pma_count": null,
-     "k510_count": null,
-     "pathway": "Class 2 (510(k)/exempt)",
-     "preempted": false,
-     "evidence": "Class 2 device (code DZE) \u2014 510(k)/exempt pathway; Lohr, not preempted"
-    },
-    "litigation": {
-     "docket_hits": 0,
-     "sample_cases": []
-    }
-   },
-   "score": {
-    "product": "DENTAL IMPLANT",
-    "event": "Inadequate Osseointegration",
-    "injury_severity": 6,
-    "mechanism_plausibility": 8,
-    "label_gap": 7,
+    "label_gap": 5,
     "crowding_penalty": 10,
     "viability": 35,
     "recommendation": "monitor",
-    "rationale": "Osseointegration failure is a well-recognized implant complication with plausible design/manufacturing theories (surface treatment defects, material composition). Class 2 (510(k)) device avoids Riegel preemption, preserving state claims. However, the high case count (6,211) with sustained quarterly volume and negative slope suggests this is an established, long-recognized phenomenon rather than an emerging safety signal. Zero litigation hits indicate either acceptance as known risk or difficulty proving defect versus patient/surgical factors.",
+    "rationale": "Thrombosis from implanted ports/catheters is a well-recognized complication but can be severe (PE, stroke). The modest upward PRR slope (5.74) and Class 2 status (no Riegel bar) provide a foundation. However, this is a known, labeled risk for most such devices, and the lack of existing litigation or literature suggests the plaintiffs' bar has not found a viable theory. The 1,109 cases warrant monitoring for a subset tied to a specific manufacturer's design flaw or a label gap, but the current signal lacks the novelty or severity to drive mass litigation.",
     "likely_defendants": [
-     "Major dental implant manufacturers (Straumann, Nobel Biocare, Zimmer Biomet)"
+     "Bard",
+     "AngioDynamics",
+     "Smiths Medical"
     ]
    }
   },
   {
    "source": "maude",
    "product": "POSITIONER, TOOTH, PREFORMED",
-   "event": "Hypersensitivity/Allergic reaction",
-   "a": 578,
-   "product_total": 898,
-   "event_total": 7057,
-   "n": 1195386,
-   "prr": 118.67,
-   "ror": 331.2,
-   "chi2": 62173.19,
+   "event": "Deformity/ Disfigurement",
+   "a": 733,
+   "product_total": 897,
+   "event_total": 9519,
+   "n": 1185596,
+   "prr": 110.19,
+   "ror": 598.2,
+   "chi2": 73691.21,
    "trajectory": [
     {
      "quarter": "2025Q1",
-     "a": 1,
-     "prr": 1.09
+     "a": 95,
+     "prr": 50.95
     },
     {
      "quarter": "2025Q2",
-     "a": 1,
-     "prr": 1.95
+     "a": 58,
+     "prr": 57.62
     },
     {
      "quarter": "2025Q3",
-     "a": 2,
-     "prr": 4.71
+     "a": 74,
+     "prr": 101.74
     },
     {
      "quarter": "2025Q4",
-     "a": 3,
-     "prr": 7.11
+     "a": 61,
+     "prr": 96.01
     },
     {
      "quarter": "2026Q1",
-     "a": 570,
-     "prr": 88.21
+     "a": 593,
+     "prr": 74.03
     },
     {
      "quarter": "2026Q2",
-     "a": 3,
-     "prr": 27.07
+     "a": 16,
+     "prr": 113.08
     }
    ],
-   "prr_slope": 5.2,
+   "prr_slope": 12.43,
    "enrichment": {
     "pubmed": {
      "count": 0,
@@ -1160,18 +992,17 @@
    },
    "score": {
     "product": "POSITIONER, TOOTH, PREFORMED",
-    "event": "Hypersensitivity/Allergic reaction",
-    "injury_severity": 4,
-    "mechanism_plausibility": 8,
-    "label_gap": 6,
+    "event": "Deformity/ Disfigurement",
+    "injury_severity": 7,
+    "mechanism_plausibility": 7,
+    "label_gap": 5,
     "crowding_penalty": 10,
-    "viability": 35,
+    "viability": 30,
     "recommendation": "monitor",
-    "rationale": "Class 1 dental device (not preempted per Lohr) with plausible allergic mechanism and no existing litigation. However, the signal appears artifact-driven: 570 of 578 cases concentrated in 2026Q1, followed by collapse to 3 cases and PRR drop from 88\u219227, suggesting a batch complaint or reporting event rather than true escalating risk. Hypersensitivity is typically transient/treatable (moderate severity) and likely material-related (nickel, latex, acrylic). Monitor for sustained pattern; current spike-and-collapse profile undermines viability.",
+    "rationale": "Deformity/disfigurement from orthodontic positioners (e.g., clear aligners) is a serious aesthetic and functional injury, particularly if permanent. The spike in 2026Q1 (593 cases) suggests a specific product recall or media event. As a Class 1 device, no Riegel preemption applies. However, zero litigation and literature indicate plaintiffs' firms have not found traction, possibly due to causation challenges (patient compliance, provider error). The signal warrants monitoring for a subset tied to design defect (e.g., excessive force) or inadequate warnings, but current viability is moderate pending further case development.",
     "likely_defendants": [
-     "Align Technology",
-     "3M Unitek",
-     "Ormco Corporation"
+     "Align Technology (Invisalign)",
+     "Dentsply Sirona"
     ]
    }
   },
@@ -1181,11 +1012,11 @@
    "event": "Abdominal Pain",
    "a": 390,
    "product_total": 949,
-   "event_total": 2052,
-   "n": 1195386,
-   "prr": 295.35,
-   "ror": 500.7,
-   "chi2": 92582.77,
+   "event_total": 2034,
+   "n": 1185596,
+   "prr": 296.13,
+   "ror": 502.04,
+   "chi2": 92638.11,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -1241,16 +1072,95 @@
    "score": {
     "product": "SET, ADMINISTRATION, FOR PERITONEAL DIALYSIS, DISPOSABLE",
     "event": "Abdominal Pain",
-    "injury_severity": 2,
-    "mechanism_plausibility": 5,
+    "injury_severity": 3,
+    "mechanism_plausibility": 7,
     "label_gap": 5,
     "crowding_penalty": 10,
-    "viability": 15,
+    "viability": 25,
     "recommendation": "pass",
-    "rationale": "Class 2 device (not preempted), but abdominal pain is subjective, common in ESRD/dialysis patients (confounding by indication), and transient. No literature, no litigation, declining PRR (-21/quarter). Mechanism plausible (peritonitis, catheter irritation) but pain alone is weak injury unless accompanied by infection/perforation. Insufficient severity and too much background noise to pursue.",
+    "rationale": "Abdominal pain during peritoneal dialysis is a common, transient, subjective complaint that could stem from the underlying renal failure, catheter placement issues, or peritonitis. While the Class 2 device avoids Riegel preemption, the injury lacks permanence and objectivity needed for mass tort. The negative PRR trajectory and zero litigation suggest the plaintiffs' bar has passed on this signal. No clear failure-to-warn theory emerges for a predictable complication of PD therapy.",
     "likely_defendants": [
-     "Baxter",
+     "Baxter Healthcare",
      "Fresenius Medical Care"
+    ]
+   }
+  },
+  {
+   "source": "maude",
+   "product": "POSITIONER, TOOTH, PREFORMED",
+   "event": "Hypersensitivity/Allergic reaction",
+   "a": 578,
+   "product_total": 897,
+   "event_total": 7016,
+   "n": 1185596,
+   "prr": 118.57,
+   "ror": 331.61,
+   "chi2": 62093.25,
+   "trajectory": [
+    {
+     "quarter": "2025Q1",
+     "a": 1,
+     "prr": 1.09
+    },
+    {
+     "quarter": "2025Q2",
+     "a": 1,
+     "prr": 1.95
+    },
+    {
+     "quarter": "2025Q3",
+     "a": 2,
+     "prr": 4.71
+    },
+    {
+     "quarter": "2025Q4",
+     "a": 3,
+     "prr": 7.11
+    },
+    {
+     "quarter": "2026Q1",
+     "a": 570,
+     "prr": 88.21
+    },
+    {
+     "quarter": "2026Q2",
+     "a": 3,
+     "prr": 27.07
+    }
+   ],
+   "prr_slope": 5.2,
+   "enrichment": {
+    "pubmed": {
+     "count": 0,
+     "titles": []
+    },
+    "preemption": {
+     "product_code": "KMY",
+     "device_class": "1",
+     "pma_count": null,
+     "k510_count": null,
+     "pathway": "Class 1 (510(k)/exempt)",
+     "preempted": false,
+     "evidence": "Class 1 device (code KMY) \u2014 510(k)/exempt pathway; Lohr, not preempted"
+    },
+    "litigation": {
+     "docket_hits": 0,
+     "sample_cases": []
+    }
+   },
+   "score": {
+    "product": "POSITIONER, TOOTH, PREFORMED",
+    "event": "Hypersensitivity/Allergic reaction",
+    "injury_severity": 6,
+    "mechanism_plausibility": 7,
+    "label_gap": 7,
+    "crowding_penalty": 10,
+    "viability": 25,
+    "recommendation": "monitor",
+    "rationale": "Allergic reactions to orthodontic devices (likely BPA, latex, or acrylic components) are plausible and diagnosable. The signal is genuinely accelerating (PRR jumps from near-zero to 88 in 2026Q1, then sustains at 27 in Q2). The device is Class 1 (not preempted). However, allergic reactions are often transient and may not be severe enough for mass tort unless systemic (anaphylaxis). No litigation yet. The label is likely silent on specific allergens, supporting failure-to-warn. Monitor for severity data and plaintiff filings; if anaphylaxis cases emerge, this could have legs.",
+    "likely_defendants": [
+     "Align Technology (Invisalign)",
+     "Other clear aligner manufacturers"
     ]
    }
   },
@@ -1258,13 +1168,13 @@
    "source": "maude",
    "product": "ENDOSSEOUS DENTAL IMPLANT",
    "event": "Fibrosis",
-   "a": 85870,
-   "product_total": 629777,
-   "event_total": 86120,
-   "n": 1195386,
-   "prr": 308.48,
-   "ror": 357.03,
-   "chi2": 82328.44,
+   "a": 85187,
+   "product_total": 624358,
+   "event_total": 85435,
+   "n": 1185596,
+   "prr": 308.77,
+   "ror": 357.4,
+   "chi2": 81747.84,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -1320,31 +1230,144 @@
    "score": {
     "product": "ENDOSSEOUS DENTAL IMPLANT",
     "event": "Fibrosis",
-    "injury_severity": 3,
+    "injury_severity": 4,
     "mechanism_plausibility": 6,
-    "label_gap": 5,
+    "label_gap": 0,
     "crowding_penalty": 10,
     "viability": 15,
     "recommendation": "pass",
-    "rationale": "Class 2 device, not preempted, but fibrosis around dental implants is a known sequela of peri-implantitis and poor osseointegration \u2014 arguably part of the device's failure mode rather than a novel injury. The PRR trajectory is volatile and extreme (213\u2192412\u2192218\u2192275\u2192402\u2192331), suggesting reporting artifacts rather than a true accelerating signal. The case volume (85k+) is enormous but no litigation exists, which is highly unusual if this were a viable mass tort. Likely reflects legacy reporting of a well-known complication.",
+    "rationale": "Fibrosis around dental implants is a known complication related to peri-implantitis and osseointegration failure. The extraordinarily high case count (85,187) and PRR (308) with accelerating slope suggests an artifact\u2014likely reflecting the product's overwhelming market share rather than a new safety signal. The Class 2 device avoids Riegel preemption, but with zero literature hits and no existing litigation, this appears to be background noise rather than a viable mass-tort opportunity. The injury (soft-tissue fibrosis) is moderately severe but expected in this product category.",
     "likely_defendants": [
      "Straumann",
      "Nobel Biocare",
-     "Zimmer Biomet"
+     "Zimmer Biomet Dental"
     ]
+   }
+  },
+  {
+   "source": "faers",
+   "product": "DESOXIMETASONE",
+   "event": "PEMPHIGUS",
+   "a": 457,
+   "product_total": 1364,
+   "event_total": 853,
+   "n": 487616,
+   "prr": 411.4,
+   "ror": 618.19,
+   "chi2": 86820.26,
+   "trajectory": [
+    {
+     "quarter": "2025Q1",
+     "a": 269,
+     "prr": 438.21
+    },
+    {
+     "quarter": "2025Q2",
+     "a": 159,
+     "prr": 627.04
+    },
+    {
+     "quarter": "2025Q3",
+     "a": 254,
+     "prr": 407.64
+    },
+    {
+     "quarter": "2025Q4",
+     "a": 181,
+     "prr": 408.25
+    },
+    {
+     "quarter": "2026Q1",
+     "a": 89,
+     "prr": 353.52
+    },
+    {
+     "quarter": "2026Q2",
+     "a": 0,
+     "prr": 0
+    }
+   ],
+   "prr_slope": -87.64,
+   "enrichment": {
+    "pubmed": {
+     "count": 1,
+     "titles": [
+      {
+       "pmid": "4037830",
+       "title": "Macroglossia. An unusual presentation of pemphigus vulgaris.",
+       "date": "1985 Oct"
+      }
+     ]
+    },
+    "label": {
+     "label_found": true,
+     "event_in_warnings": false,
+     "warning_snippet": "",
+     "has_boxed_warning": false
+    },
+    "generic": {
+     "available": true,
+     "categories": {
+      "ANDA": 34,
+      "BULK INGREDIENT FOR HUMAN PRESCRIPTION COMPOUNDING": 2,
+      "NDA AUTHORIZED GENERIC": 1,
+      "BULK INGREDIENT": 4,
+      "NDA": 3
+     },
+     "evidence": "35 ANDA/authorized-generic NDC listings on the market"
+    },
+    "litigation": {
+     "docket_hits": 2,
+     "sample_cases": [
+      {
+       "caseName": "DEKKER v. HARRIS",
+       "court": "District Court, N.D. Florida",
+       "dateFiled": "2022-09-07",
+       "docket_id": 64953130
+      },
+      {
+       "caseName": "Janssen Biotech, Inc. v. Amgen Inc.",
+       "court": "District Court, D. Delaware",
+       "dateFiled": "2022-11-29",
+       "docket_id": 66574873
+      }
+     ]
+    }
+   },
+   "score": {
+    "product": "DESOXIMETASONE",
+    "event": "PEMPHIGUS",
+    "injury_severity": 9,
+    "mechanism_plausibility": 7,
+    "label_gap": 10,
+    "crowding_penalty": 8,
+    "viability": 12,
+    "recommendation": "monitor",
+    "rationale": "Pemphigus (autoimmune blistering disease) is severe, permanent, and life-threatening. Mechanism linking topical corticosteroids to pemphigus induction is biologically plausible (immune dysregulation). Label silent on this risk (label_gap 10). However, desoximetasone is widely generic (35 ANDA listings), triggering Mensing/Bartlett preemption against generic makers. PRR collapses to zero in 2026Q2 (artifact or reporting cessation). Two unrelated litigation hits. Without brand exposure window or innovator-liability jurisdiction, viability is capped. Monitor for brand-specific evidence.",
+    "likely_defendants": [
+     "Taro Pharmaceuticals",
+     "Teva",
+     "Mylan (brand: Topicort if still marketed)"
+    ],
+    "viability_raw": 25,
+    "generic_adjusted": true
+   },
+   "generic_flag": {
+    "flag": "generic_available",
+    "note": "Generic equivalents are on the market for DESOXIMETASONE (35 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
    }
   },
   {
    "source": "faers",
    "product": "LEFLUNOMIDE",
    "event": "PEMPHIGUS",
-   "a": 579,
-   "product_total": 2804,
-   "event_total": 863,
-   "n": 493414,
-   "prr": 356.71,
-   "ror": 449.28,
-   "chi2": 67588.03,
+   "a": 572,
+   "product_total": 2765,
+   "event_total": 853,
+   "n": 487616,
+   "prr": 356.95,
+   "ror": 449.79,
+   "chi2": 66882.69,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -1413,13 +1436,13 @@
     "generic": {
      "available": true,
      "categories": {
-      "ANDA": 37,
-      "BULK INGREDIENT": 6,
+      "BULK INGREDIENT": 7,
+      "ANDA": 36,
       "NDA": 3,
       "BULK INGREDIENT FOR HUMAN PRESCRIPTION COMPOUNDING": 3,
       "UNAPPROVED DRUG OTHER": 1
      },
-     "evidence": "37 ANDA/authorized-generic NDC listings on the market"
+     "evidence": "36 ANDA/authorized-generic NDC listings on the market"
     },
     "litigation": {
      "docket_hits": 5,
@@ -1463,412 +1486,33 @@
     "injury_severity": 8,
     "mechanism_plausibility": 7,
     "label_gap": 7,
-    "crowding_penalty": 9,
-    "viability": 12,
-    "recommendation": "monitor",
-    "rationale": "Leflunomide-induced pemphigus (severe autoimmune blistering disease) is a documented drug-induced phenomenon, serious and permanent. Event not in warnings despite boxed warning for other toxicities, creating label-gap theory. However, generic availability (37 ANDAs) triggers Menseng preemption. The PRR collapses to zero in 2026Q2, suggesting reporting artifact. Existing litigation is unrelated (patent, antitrust). Monitor for brand-exposure cases or innovator-liability jurisdictions, but current viability is low.",
-    "likely_defendants": [
-     "Sanofi (brand Arava)"
-    ],
-    "viability_raw": 25,
-    "generic_adjusted": true
-   },
-   "generic_flag": {
-    "flag": "generic_available",
-    "note": "Generic equivalents are on the market for LEFLUNOMIDE (37 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
-   }
-  },
-  {
-   "source": "faers",
-   "product": "DESOXIMETASONE",
-   "event": "PEMPHIGUS",
-   "a": 462,
-   "product_total": 1379,
-   "event_total": 863,
-   "n": 493414,
-   "prr": 411.08,
-   "ror": 617.69,
-   "chi2": 87781.74,
-   "trajectory": [
-    {
-     "quarter": "2025Q1",
-     "a": 269,
-     "prr": 438.21
-    },
-    {
-     "quarter": "2025Q2",
-     "a": 159,
-     "prr": 627.04
-    },
-    {
-     "quarter": "2025Q3",
-     "a": 254,
-     "prr": 407.64
-    },
-    {
-     "quarter": "2025Q4",
-     "a": 181,
-     "prr": 408.25
-    },
-    {
-     "quarter": "2026Q1",
-     "a": 89,
-     "prr": 353.52
-    },
-    {
-     "quarter": "2026Q2",
-     "a": 0,
-     "prr": 0
-    }
-   ],
-   "prr_slope": -87.64,
-   "enrichment": {
-    "pubmed": {
-     "count": 1,
-     "titles": [
-      {
-       "pmid": "4037830",
-       "title": "Macroglossia. An unusual presentation of pemphigus vulgaris.",
-       "date": "1985 Oct"
-      }
-     ]
-    },
-    "label": {
-     "label_found": true,
-     "event_in_warnings": false,
-     "warning_snippet": "",
-     "has_boxed_warning": false
-    },
-    "generic": {
-     "available": true,
-     "categories": {
-      "NDA": 3,
-      "ANDA": 34,
-      "BULK INGREDIENT FOR HUMAN PRESCRIPTION COMPOUNDING": 2,
-      "NDA AUTHORIZED GENERIC": 1,
-      "BULK INGREDIENT": 4
-     },
-     "evidence": "35 ANDA/authorized-generic NDC listings on the market"
-    },
-    "litigation": {
-     "docket_hits": 2,
-     "sample_cases": [
-      {
-       "caseName": "DEKKER v. HARRIS",
-       "court": "District Court, N.D. Florida",
-       "dateFiled": "2022-09-07",
-       "docket_id": 64953130
-      },
-      {
-       "caseName": "Janssen Biotech, Inc. v. Amgen Inc.",
-       "court": "District Court, D. Delaware",
-       "dateFiled": "2022-11-29",
-       "docket_id": 66574873
-      }
-     ]
-    }
-   },
-   "score": {
-    "product": "DESOXIMETASONE",
-    "event": "PEMPHIGUS",
-    "injury_severity": 9,
-    "mechanism_plausibility": 4,
-    "label_gap": 10,
-    "crowding_penalty": 9,
+    "crowding_penalty": 8,
     "viability": 10,
-    "recommendation": "pass",
-    "rationale": "Severe autoimmune blistering disease (pemphigus) is serious and objective, label-silent, but mechanism linking a topical corticosteroid to pemphigus is weak (no known drug-induced pemphigus from steroids; usually thiol drugs). Generic available (35 ANDAs) with PLIVA preemption closing most claims. PRR collapses to zero in 2026Q2, suggesting artifact/data-quality issue. Two unrelated litigation hits. Despite high PRR and label gap, implausibility and generic preemption kill viability; pass.",
+    "recommendation": "monitor",
+    "rationale": "Pemphigus is a severe, diagnosable autoimmune blistering disease with plausible mechanism (leflunomide is a known immunomodulator prescribed for rheumatoid arthritis). The event is not in the label warnings, creating a failure-to-warn opening. However, the PRR collapses to zero in 2026Q2, and generic availability (36 ANDA products) bars recovery against generics under PLIVA/Mensing. The boxed warning (hepatotoxicity, immunosuppression) does not cover pemphigus, but the five litigation hits are unrelated (patent, antitrust). Without a viable brand theory or sustained signal, this is a low-viability monitor.",
     "likely_defendants": [
-     "Taro Pharmaceuticals",
-     "Teva (generic)"
+     "sanofi-aventis (brand Arava)",
+     "generic ANDA holders"
     ],
     "viability_raw": 20,
     "generic_adjusted": true
    },
    "generic_flag": {
     "flag": "generic_available",
-    "note": "Generic equivalents are on the market for DESOXIMETASONE (35 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
-   }
-  },
-  {
-   "source": "maude",
-   "product": "PROSTHESIS, BREAST, NONINFLATABLE, INTERNAL, SILICONE GEL-FILLED",
-   "event": "Deformity/ Disfigurement",
-   "a": 4197,
-   "product_total": 27996,
-   "event_total": 9588,
-   "n": 1195386,
-   "prr": 32.46,
-   "ror": 38.01,
-   "chi2": 72523.88,
-   "trajectory": [
-    {
-     "quarter": "2025Q1",
-     "a": 1067,
-     "prr": 22.44
-    },
-    {
-     "quarter": "2025Q2",
-     "a": 1054,
-     "prr": 22.55
-    },
-    {
-     "quarter": "2025Q3",
-     "a": 1133,
-     "prr": 53.18
-    },
-    {
-     "quarter": "2025Q4",
-     "a": 1133,
-     "prr": 49.15
-    },
-    {
-     "quarter": "2026Q1",
-     "a": 1140,
-     "prr": 15.33
-    },
-    {
-     "quarter": "2026Q2",
-     "a": 1006,
-     "prr": 64.39
-    }
-   ],
-   "prr_slope": 8.39,
-   "enrichment": {
-    "pubmed": {
-     "count": 0,
-     "titles": []
-    },
-    "preemption": {
-     "product_code": "FTR",
-     "device_class": "3",
-     "pma_count": 259,
-     "k510_count": 0,
-     "pathway": "PMA (Class III)",
-     "preempted": true,
-     "evidence": "Class III device (product code FTR) with 259 PMA approval(s) \u2014 Riegel express preemption of design/warning claims"
-    },
-    "litigation": {
-     "docket_hits": 0,
-     "sample_cases": []
-    }
-   },
-   "score": {
-    "product": "PROSTHESIS, BREAST, NONINFLATABLE, INTERNAL, SILICONE GEL-FILLED",
-    "event": "Deformity/ Disfigurement",
-    "injury_severity": 7,
-    "mechanism_plausibility": 6,
-    "label_gap": 3,
-    "crowding_penalty": 10,
-    "viability": 8,
-    "recommendation": "monitor",
-    "rationale": "Silicone gel breast implants causing deformity is a legitimate injury (capsular contracture, rupture, asymmetry), but this is a PMA Class III device\u2014Riegel preempts design and failure-to-warn claims. Only parallel claims (manufacturing defect, specification violation, failure to report AEs) survive. The PRR is accelerating (+8.39/quarter), but without evidence of a parallel-claim theory, viability is low. Zero existing litigation likely reflects the preemption wall, not absence of injury.",
-    "likely_defendants": [
-     "Allergan (AbbVie)",
-     "Mentor (Johnson & Johnson)",
-     "Sientra"
-    ],
-    "viability_raw": 25,
-    "preemption_adjusted": true
-   },
-   "preemption_flag": {
-    "flag": "device_preemption",
-    "note": "PROSTHESIS, BREAST, NONINFLATABLE, INTERNAL, SILICONE GEL-FILLED is a PMA (Class III) device. Riegel v. Medtronic preempts state design-defect and failure-to-warn claims on PMA devices; viability is downweighted. Parallel claims (manufacturing defect / violation of the device's own FDA-approved requirements, failure to report to FDA) survive preemption \u2014 assess those before passing."
-   }
-  },
-  {
-   "source": "faers",
-   "product": "DESOXIMETASONE",
-   "event": "SYNOVITIS",
-   "a": 403,
-   "product_total": 1379,
-   "event_total": 794,
-   "n": 493414,
-   "prr": 367.76,
-   "ror": 519.19,
-   "chi2": 72522.27,
-   "trajectory": [
-    {
-     "quarter": "2025Q1",
-     "a": 259,
-     "prr": 328.92
-    },
-    {
-     "quarter": "2025Q2",
-     "a": 159,
-     "prr": 510.92
-    },
-    {
-     "quarter": "2025Q3",
-     "a": 236,
-     "prr": 343.73
-    },
-    {
-     "quarter": "2025Q4",
-     "a": 151,
-     "prr": 293.76
-    },
-    {
-     "quarter": "2026Q1",
-     "a": 64,
-     "prr": 323.54
-    },
-    {
-     "quarter": "2026Q2",
-     "a": 0,
-     "prr": 0
-    }
-   ],
-   "prr_slope": -65.78,
-   "enrichment": {
-    "pubmed": {
-     "count": 0,
-     "titles": []
-    },
-    "label": {
-     "label_found": true,
-     "event_in_warnings": false,
-     "warning_snippet": "",
-     "has_boxed_warning": false
-    },
-    "generic": {
-     "available": true,
-     "categories": {
-      "NDA": 3,
-      "ANDA": 34,
-      "BULK INGREDIENT FOR HUMAN PRESCRIPTION COMPOUNDING": 2,
-      "NDA AUTHORIZED GENERIC": 1,
-      "BULK INGREDIENT": 4
-     },
-     "evidence": "35 ANDA/authorized-generic NDC listings on the market"
-    },
-    "litigation": {
-     "docket_hits": 1,
-     "sample_cases": [
-      {
-       "caseName": "Nelson v. Commissioner of Social Security",
-       "court": "District Court, N.D. Ohio",
-       "dateFiled": "2016-10-07",
-       "docket_id": 6203334
-      }
-     ]
-    }
-   },
-   "score": {
-    "product": "DESOXIMETASONE",
-    "event": "SYNOVITIS",
-    "injury_severity": 5,
-    "mechanism_plausibility": 4,
-    "label_gap": 8,
-    "crowding_penalty": 10,
-    "viability": 8,
-    "recommendation": "pass",
-    "rationale": "Desoximetasone is a topical corticosteroid; synovitis (joint inflammation) as an adverse event is implausible mechanistically for a dermatologic product and likely reflects indication confounding (treating rash over arthritic joints) or coding error. The PRR collapses to zero in 2026Q2, confirming artifact. Generic availability (35 ANDAs) triggers Mensing/Bartlett preemption of failure-to-warn claims. The single litigation hit is a Social Security disability case, not product liability. Pass.",
-    "likely_defendants": [],
-    "viability_raw": 15,
-    "generic_adjusted": true
-   },
-   "generic_flag": {
-    "flag": "generic_available",
-    "note": "Generic equivalents are on the market for DESOXIMETASONE (35 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
-   }
-  },
-  {
-   "source": "maude",
-   "product": "TEMPORARY NON-ROLLER TYPE LEFT HEART SUPPORT BLOOD PUMP",
-   "event": "Ischemia",
-   "a": 944,
-   "product_total": 8954,
-   "event_total": 1559,
-   "n": 1195386,
-   "prr": 203.39,
-   "ror": 227.24,
-   "chi2": 75014.17,
-   "trajectory": [
-    {
-     "quarter": "2025Q1",
-     "a": 175,
-     "prr": 357.1
-    },
-    {
-     "quarter": "2025Q2",
-     "a": 239,
-     "prr": 215.57
-    },
-    {
-     "quarter": "2025Q3",
-     "a": 220,
-     "prr": 286.45
-    },
-    {
-     "quarter": "2025Q4",
-     "a": 177,
-     "prr": 239.25
-    },
-    {
-     "quarter": "2026Q1",
-     "a": 387,
-     "prr": 140.38
-    },
-    {
-     "quarter": "2026Q2",
-     "a": 213,
-     "prr": 257.61
-    }
-   ],
-   "prr_slope": -19.9,
-   "enrichment": {
-    "pubmed": {
-     "count": 0,
-     "titles": []
-    },
-    "preemption": {
-     "product_code": "OZD",
-     "device_class": "3",
-     "pma_count": 128,
-     "k510_count": 0,
-     "pathway": "PMA (Class III)",
-     "preempted": true,
-     "evidence": "Class III device (product code OZD) with 128 PMA approval(s) \u2014 Riegel express preemption of design/warning claims"
-    },
-    "litigation": {
-     "docket_hits": 0,
-     "sample_cases": []
-    }
-   },
-   "score": {
-    "product": "TEMPORARY NON-ROLLER TYPE LEFT HEART SUPPORT BLOOD PUMP",
-    "event": "Ischemia",
-    "injury_severity": 8,
-    "mechanism_plausibility": 7,
-    "label_gap": 4,
-    "crowding_penalty": 10,
-    "viability": 6,
-    "recommendation": "monitor",
-    "rationale": "Ischemia (limb, mesenteric, or cardiac) is a severe injury. Plausible mechanism: pump malposition, arterial thromboembolism, or occlusion by the catheter itself. PMA preemption (Class III, 128 PMAs) express-preempts design/warning claims under Riegel. EXCEPTION: manufacturing defects or parallel claims (pump failure, specs violation) survive preemption. Declining PRR (357\u2192258) and no litigation suggest no parallel-claim theory has gained traction. Monitor for quality-control failures or FDA warning letters.",
-    "likely_defendants": [
-     "Abiomed (J&J)",
-     "Abbott"
-    ],
-    "viability_raw": 20,
-    "preemption_adjusted": true
-   },
-   "preemption_flag": {
-    "flag": "device_preemption",
-    "note": "TEMPORARY NON-ROLLER TYPE LEFT HEART SUPPORT BLOOD PUMP is a PMA (Class III) device. Riegel v. Medtronic preempts state design-defect and failure-to-warn claims on PMA devices; viability is downweighted. Parallel claims (manufacturing defect / violation of the device's own FDA-approved requirements, failure to report to FDA) survive preemption \u2014 assess those before passing."
+    "note": "Generic equivalents are on the market for LEFLUNOMIDE (36 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
    }
   },
   {
    "source": "faers",
    "product": "ALENDRONATE SODIUM",
    "event": "PEMPHIGUS",
-   "a": 545,
-   "product_total": 2643,
-   "event_total": 863,
-   "n": 493414,
-   "prr": 318.24,
-   "ror": 400.65,
-   "chi2": 63501.86,
+   "a": 542,
+   "product_total": 2610,
+   "event_total": 853,
+   "n": 487616,
+   "prr": 323.85,
+   "ror": 408.47,
+   "chi2": 63594.84,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -1927,12 +1571,12 @@
     "generic": {
      "available": true,
      "categories": {
-      "ANDA": 31,
-      "DRUG FOR FURTHER PROCESSING": 7,
-      "BULK INGREDIENT": 9,
-      "NDA": 3
+      "ANDA": 34,
+      "BULK INGREDIENT": 10,
+      "NDA": 4,
+      "DRUG FOR FURTHER PROCESSING": 2
      },
-     "evidence": "31 ANDA/authorized-generic NDC listings on the market"
+     "evidence": "34 ANDA/authorized-generic NDC listings on the market"
     },
     "litigation": {
      "docket_hits": 1,
@@ -1950,59 +1594,60 @@
     "product": "ALENDRONATE SODIUM",
     "event": "PEMPHIGUS",
     "injury_severity": 8,
-    "mechanism_plausibility": 6,
+    "mechanism_plausibility": 4,
     "label_gap": 7,
-    "crowding_penalty": 10,
-    "viability": 6,
+    "crowding_penalty": 9,
+    "viability": 10,
     "recommendation": "monitor",
-    "rationale": "Pemphigus is a severe, diagnosable autoimmune blistering disease. Literature confirms drug-induced pemphigus exists and FDA FAERS data support alendronate association. Label silent on pemphigus creates failure-to-warn opening. However, generic market dominance (31 ANDAs) triggers PLIVA preemption, eliminating most defendants. The single litigation hit is unrelated (Bair Hugger). PRR collapses to zero in 2026Q2, suggesting data artifact rather than accelerating trend. Without collectible brand exposure window, viability is low.",
+    "rationale": "Pemphigus (severe autoimmune blistering disease) is a serious, diagnosable injury. The label is silent on pemphigus, and there is emerging literature (2025 FAERS mining study). However, the signal exhibits the same artifact pattern (PRR collapse to zero) and alendronate is dominated by generics (34 ANDAs), triggering Mensing preemption. The lone Bair Hugger MDL hit is unrelated. Monitor for brand-exposure theory or literature evolution, but generic preemption is a major barrier.",
     "likely_defendants": [
-     "Merck (brand Fosamax, if brand-exposure cases exist)"
+     "Merck (brand Fosamax)",
+     "Generic manufacturers (preempted)"
     ],
-    "viability_raw": 12,
+    "viability_raw": 20,
     "generic_adjusted": true
    },
    "generic_flag": {
     "flag": "generic_available",
-    "note": "Generic equivalents are on the market for ALENDRONATE SODIUM (31 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
+    "note": "Generic equivalents are on the market for ALENDRONATE SODIUM (34 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
    }
   },
   {
    "source": "faers",
-   "product": "LEFLUNOMIDE",
-   "event": "DUODENAL ULCER PERFORATION",
-   "a": 490,
-   "product_total": 2804,
-   "event_total": 675,
-   "n": 493414,
-   "prr": 463.43,
-   "ror": 561.35,
-   "chi2": 61925.75,
+   "product": "DESOXIMETASONE",
+   "event": "PERICARDITIS",
+   "a": 449,
+   "product_total": 1364,
+   "event_total": 1092,
+   "n": 487616,
+   "prr": 248.93,
+   "ror": 370.6,
+   "chi2": 65286.0,
    "trajectory": [
     {
      "quarter": "2025Q1",
-     "a": 266,
-     "prr": 435.23
+     "a": 256,
+     "prr": 229.05
     },
     {
      "quarter": "2025Q2",
-     "a": 146,
-     "prr": 428.58
+     "a": 151,
+     "prr": 275.81
     },
     {
      "quarter": "2025Q3",
-     "a": 221,
-     "prr": 463.87
+     "a": 256,
+     "prr": 255.97
     },
     {
      "quarter": "2025Q4",
-     "a": 194,
-     "prr": 446.35
+     "a": 177,
+     "prr": 228.6
     },
     {
      "quarter": "2026Q1",
-     "a": 126,
-     "prr": 494.5
+     "a": 84,
+     "prr": 209.47
     },
     {
      "quarter": "2026Q2",
@@ -2010,126 +1655,28 @@
      "prr": 0
     }
    ],
-   "prr_slope": -87.05,
-   "enrichment": {
-    "pubmed": {
-     "count": 1,
-     "titles": [
-      {
-       "pmid": "41836963",
-       "title": "Adverse events related to drug-drug interactions in tocilizumab combination therapy: a retrospective analysis and clinical implications.",
-       "date": "2026"
-      }
-     ]
-    },
-    "label": {
-     "label_found": true,
-     "event_in_warnings": false,
-     "warning_snippet": "",
-     "has_boxed_warning": true
-    },
-    "generic": {
-     "available": true,
-     "categories": {
-      "ANDA": 37,
-      "BULK INGREDIENT": 6,
-      "NDA": 3,
-      "BULK INGREDIENT FOR HUMAN PRESCRIPTION COMPOUNDING": 3,
-      "UNAPPROVED DRUG OTHER": 1
-     },
-     "evidence": "37 ANDA/authorized-generic NDC listings on the market"
-    },
-    "litigation": {
-     "docket_hits": 1,
-     "sample_cases": [
-      {
-       "caseName": "In Re: Vioxx Products Liability Litigation",
-       "court": "District Court, E.D. Louisiana",
-       "dateFiled": "2005-02-17",
-       "docket_id": 4270961
-      }
-     ]
-    }
-   },
-   "score": {
-    "product": "LEFLUNOMIDE",
-    "event": "DUODENAL ULCER PERFORATION",
-    "injury_severity": 9,
-    "mechanism_plausibility": 7,
-    "label_gap": 8,
-    "crowding_penalty": 4,
-    "viability": 6,
-    "recommendation": "pass",
-    "rationale": "Severe, objective injury (GI perforation) with plausible mechanism (DMARD/immunosuppressant GI toxicity) and label silence creates theoretical opening. However, generic availability (37 ANDAs) triggers Mensing/Bartlett preemption for generic manufacturers, eliminating most potential defendants. The collapsed PRR (494\u21920 in 2026Q2) and negative slope (-87/quarter) indicate the signal is extinguishing, not emerging. The single litigation hit is unrelated (Vioxx MDL). Without brand-exposure causation window or innovator-liability jurisdiction, this is a non-viable target dominated by preempted generics.",
-    "likely_defendants": [
-     "Sanofi-Aventis (brand Arava)",
-     "generic manufacturers (preempted)"
-    ],
-    "viability_raw": 12,
-    "generic_adjusted": true
-   },
-   "generic_flag": {
-    "flag": "generic_available",
-    "note": "Generic equivalents are on the market for LEFLUNOMIDE (37 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
-   }
-  },
-  {
-   "source": "maude",
-   "product": "AORTIC VALVE, PROSTHESIS, PERCUTANEOUSLY DELIV",
-   "event": "Aortic Valve Insufficiency/ Regurgitation",
-   "a": 694,
-   "product_total": 4302,
-   "event_total": 1565,
-   "n": 1195386,
-   "prr": 220.6,
-   "ror": 262.84,
-   "chi2": 84424.43,
-   "trajectory": [
-    {
-     "quarter": "2025Q1",
-     "a": 96,
-     "prr": 123.63
-    },
-    {
-     "quarter": "2025Q2",
-     "a": 111,
-     "prr": 97.42
-    },
-    {
-     "quarter": "2025Q3",
-     "a": 102,
-     "prr": 173.0
-    },
-    {
-     "quarter": "2025Q4",
-     "a": 176,
-     "prr": 190.4
-    },
-    {
-     "quarter": "2026Q1",
-     "a": 210,
-     "prr": 211.33
-    },
-    {
-     "quarter": "2026Q2",
-     "a": 216,
-     "prr": 295.28
-    }
-   ],
-   "prr_slope": 34.33,
+   "prr_slope": -45.81,
    "enrichment": {
     "pubmed": {
      "count": 0,
      "titles": []
     },
-    "preemption": {
-     "product_code": "NPT",
-     "device_class": "3",
-     "pma_count": 661,
-     "k510_count": 0,
-     "pathway": "PMA (Class III)",
-     "preempted": true,
-     "evidence": "Class III device (product code NPT) with 661 PMA approval(s) \u2014 Riegel express preemption of design/warning claims"
+    "label": {
+     "label_found": true,
+     "event_in_warnings": false,
+     "warning_snippet": "",
+     "has_boxed_warning": false
+    },
+    "generic": {
+     "available": true,
+     "categories": {
+      "ANDA": 34,
+      "BULK INGREDIENT FOR HUMAN PRESCRIPTION COMPOUNDING": 2,
+      "NDA AUTHORIZED GENERIC": 1,
+      "BULK INGREDIENT": 4,
+      "NDA": 3
+     },
+     "evidence": "35 ANDA/authorized-generic NDC listings on the market"
     },
     "litigation": {
      "docket_hits": 0,
@@ -2137,38 +1684,37 @@
     }
    },
    "score": {
-    "product": "AORTIC VALVE, PROSTHESIS, PERCUTANEOUSLY DELIV",
-    "event": "Aortic Valve Insufficiency/ Regurgitation",
-    "injury_severity": 8,
-    "mechanism_plausibility": 9,
-    "label_gap": 0,
-    "crowding_penalty": 10,
-    "viability": 4,
+    "product": "DESOXIMETASONE",
+    "event": "PERICARDITIS",
+    "injury_severity": 7,
+    "mechanism_plausibility": 3,
+    "label_gap": 6,
+    "crowding_penalty": 9,
+    "viability": 8,
     "recommendation": "pass",
-    "rationale": "Class III PMA device with Riegel preemption. Paravalvular leak/regurgitation is a well-documented TAVR complication (incomplete seal, device sizing/deployment issues), severe and objective. Accelerating PRR (+34/quarter, 124\u2192295) is notable, but this risk is in labeling and FDA summaries. Without a parallel-claim theory (manufacturing defect, specification breach), preemption bars claims. Monitor for reports of specific lot/model defects, but current signal is pass.",
+    "rationale": "Desoximetasone is a topical corticosteroid, and pericarditis (heart inflammation) is highly implausible from dermal application with minimal systemic absorption. The extreme PRRs (200+) collapsing to zero in 2026Q2 suggest a reporting artifact or data glitch, not a real signal. Generic availability (35 ANDAs) triggers Mensing preemption, closing failure-to-warn theories. Combined with the implausible mechanism, this signal lacks viability.",
     "likely_defendants": [
-     "Edwards Lifesciences",
-     "Medtronic"
+     "Generic manufacturers (preempted)"
     ],
     "viability_raw": 15,
-    "preemption_adjusted": true
+    "generic_adjusted": true
    },
-   "preemption_flag": {
-    "flag": "device_preemption",
-    "note": "AORTIC VALVE, PROSTHESIS, PERCUTANEOUSLY DELIV is a PMA (Class III) device. Riegel v. Medtronic preempts state design-defect and failure-to-warn claims on PMA devices; viability is downweighted. Parallel claims (manufacturing defect / violation of the device's own FDA-approved requirements, failure to report to FDA) survive preemption \u2014 assess those before passing."
+   "generic_flag": {
+    "flag": "generic_available",
+    "note": "Generic equivalents are on the market for DESOXIMETASONE (35 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
    }
   },
   {
    "source": "faers",
    "product": "DESOXIMETASONE",
    "event": "WOUND",
-   "a": 462,
-   "product_total": 1379,
-   "event_total": 1184,
-   "n": 493414,
-   "prr": 228.32,
-   "ror": 342.84,
-   "chi2": 63774.54,
+   "a": 459,
+   "product_total": 1364,
+   "event_total": 1174,
+   "n": 487616,
+   "prr": 228.85,
+   "ror": 344.41,
+   "chi2": 63429.89,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -2216,11 +1762,11 @@
     "generic": {
      "available": true,
      "categories": {
-      "NDA": 3,
       "ANDA": 34,
       "BULK INGREDIENT FOR HUMAN PRESCRIPTION COMPOUNDING": 2,
       "NDA AUTHORIZED GENERIC": 1,
-      "BULK INGREDIENT": 4
+      "BULK INGREDIENT": 4,
+      "NDA": 3
      },
      "evidence": "35 ANDA/authorized-generic NDC listings on the market"
     },
@@ -2295,15 +1841,15 @@
     "event": "WOUND",
     "injury_severity": 4,
     "mechanism_plausibility": 6,
-    "label_gap": 5,
-    "crowding_penalty": 5,
-    "viability": 4,
+    "label_gap": 6,
+    "crowding_penalty": 3,
+    "viability": 8,
     "recommendation": "pass",
-    "rationale": "Wound healing impairment is a known corticosteroid effect (mechanism plausible), and 'wound' as an event is somewhat vague (could be non-healing, dehiscence, or worsening). Generic dominance (35 ANDAs) largely preempts failure-to-warn claims. The 13 litigation hits are unrelated (opioid/antitrust), not wound-specific mass tort. PRR collapse to zero in 2026Q2 suggests artifact. Label gap exists but generic preemption and questionable injury specificity limit viability.",
+    "rationale": "Topical corticosteroids can delay wound healing (a known effect), so the mechanism is plausible. However, 'wound' is vague and not necessarily a severe, permanent injury. The label does not warn of this specifically, but the signal again collapses to zero (artifact). The 13 litigation hits are opioid-related (Connecticut v. Sandoz, county cases) and unrelated to desoximetasone. Generic dominance (35 ANDAs) preempts failure-to-warn claims. Low viability.",
     "likely_defendants": [
-     "Brand manufacturer (limited pool)"
+     "Generic manufacturers (preempted)"
     ],
-    "viability_raw": 8,
+    "viability_raw": 15,
     "generic_adjusted": true
    },
    "generic_flag": {
@@ -2312,101 +1858,122 @@
    }
   },
   {
-   "source": "maude",
-   "product": "AORTIC VALVE, PROSTHESIS, PERCUTANEOUSLY DELIVERED",
-   "event": "Heart Block",
-   "a": 1110,
-   "product_total": 5485,
-   "event_total": 2878,
-   "n": 1195386,
-   "prr": 136.2,
-   "ror": 170.5,
-   "chi2": 91651.44,
+   "source": "faers",
+   "product": "LEFLUNOMIDE",
+   "event": "DUODENAL ULCER PERFORATION",
+   "a": 484,
+   "product_total": 2765,
+   "event_total": 665,
+   "n": 487616,
+   "prr": 468.9,
+   "ror": 568.18,
+   "chi2": 61463.28,
    "trajectory": [
     {
      "quarter": "2025Q1",
-     "a": 250,
-     "prr": 194.86
+     "a": 266,
+     "prr": 435.23
     },
     {
      "quarter": "2025Q2",
-     "a": 243,
-     "prr": 124.49
+     "a": 146,
+     "prr": 428.58
     },
     {
      "quarter": "2025Q3",
-     "a": 242,
-     "prr": 185.92
+     "a": 221,
+     "prr": 463.87
     },
     {
      "quarter": "2025Q4",
-     "a": 276,
-     "prr": 134.0
+     "a": 194,
+     "prr": 446.35
     },
     {
      "quarter": "2026Q1",
-     "a": 330,
-     "prr": 102.3
+     "a": 126,
+     "prr": 494.5
     },
     {
      "quarter": "2026Q2",
-     "a": 308,
-     "prr": 160.8
+     "a": 0,
+     "prr": 0
     }
    ],
-   "prr_slope": -6.81,
+   "prr_slope": -87.05,
    "enrichment": {
     "pubmed": {
-     "count": 0,
-     "titles": []
+     "count": 1,
+     "titles": [
+      {
+       "pmid": "41836963",
+       "title": "Adverse events related to drug-drug interactions in tocilizumab combination therapy: a retrospective analysis and clinical implications.",
+       "date": "2026"
+      }
+     ]
     },
-    "preemption": {
-     "product_code": "NPT",
-     "device_class": "3",
-     "pma_count": 661,
-     "k510_count": 0,
-     "pathway": "PMA (Class III)",
-     "preempted": true,
-     "evidence": "Class III device (product code NPT) with 661 PMA approval(s) \u2014 Riegel express preemption of design/warning claims"
+    "label": {
+     "label_found": true,
+     "event_in_warnings": false,
+     "warning_snippet": "",
+     "has_boxed_warning": true
+    },
+    "generic": {
+     "available": true,
+     "categories": {
+      "BULK INGREDIENT": 7,
+      "ANDA": 36,
+      "NDA": 3,
+      "BULK INGREDIENT FOR HUMAN PRESCRIPTION COMPOUNDING": 3,
+      "UNAPPROVED DRUG OTHER": 1
+     },
+     "evidence": "36 ANDA/authorized-generic NDC listings on the market"
     },
     "litigation": {
-     "docket_hits": 0,
-     "sample_cases": []
+     "docket_hits": 1,
+     "sample_cases": [
+      {
+       "caseName": "In Re: Vioxx Products Liability Litigation",
+       "court": "District Court, E.D. Louisiana",
+       "dateFiled": "2005-02-17",
+       "docket_id": 4270961
+      }
+     ]
     }
    },
    "score": {
-    "product": "AORTIC VALVE, PROSTHESIS, PERCUTANEOUSLY DELIVERED",
-    "event": "Heart Block",
-    "injury_severity": 8,
-    "mechanism_plausibility": 9,
-    "label_gap": 0,
+    "product": "LEFLUNOMIDE",
+    "event": "DUODENAL ULCER PERFORATION",
+    "injury_severity": 9,
+    "mechanism_plausibility": 8,
+    "label_gap": 9,
     "crowding_penalty": 10,
-    "viability": 3,
+    "viability": 8,
     "recommendation": "pass",
-    "rationale": "Heart block is a severe, well-documented TAVR complication (mechanical compression of AV node during deployment). Class III PMA device with Riegel preemption. No parallel-claim theory evident. Declining PRR (-6.8/quarter), high case volume (1110) but flat trajectory. This risk is almost certainly in labeling and FDA summaries; no failure-to-warn opening. Pass despite injury severity.",
+    "rationale": "Duodenal ulcer perforation is a severe, objectively diagnosable injury with plausible mechanism (leflunomide is a DMARD with known GI toxicity). The label gap is excellent (not in warnings despite boxed warning present), and no meaningful existing litigation. However, the signal collapses catastrophically from PRR 494.5 to zero in 2026Q2, indicating a near-zero-background artifact rather than a real trend. Most critically, 36 ANDA generics dominate the market, triggering PLIVA preemption for failure-to-warn claims against generic manufacturers, and the brand (Arava) likely has minimal current market share. Without a viable innovator-liability jurisdiction or brand-exposure cohort, this is not actionable despite the severe injury.",
     "likely_defendants": [
-     "Edwards Lifesciences",
-     "Medtronic"
+     "Sanofi (Arava brand)",
+     "Generic manufacturers (preempted)"
     ],
-    "viability_raw": 10,
-    "preemption_adjusted": true
+    "viability_raw": 15,
+    "generic_adjusted": true
    },
-   "preemption_flag": {
-    "flag": "device_preemption",
-    "note": "AORTIC VALVE, PROSTHESIS, PERCUTANEOUSLY DELIVERED is a PMA (Class III) device. Riegel v. Medtronic preempts state design-defect and failure-to-warn claims on PMA devices; viability is downweighted. Parallel claims (manufacturing defect / violation of the device's own FDA-approved requirements, failure to report to FDA) survive preemption \u2014 assess those before passing."
+   "generic_flag": {
+    "flag": "generic_available",
+    "note": "Generic equivalents are on the market for LEFLUNOMIDE (36 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
    }
   },
   {
    "source": "maude",
    "product": "LENS, INTRAOCULAR, TORIC OPTICS",
    "event": "Visual Impairment",
-   "a": 230,
-   "product_total": 663,
-   "event_total": 1055,
-   "n": 1195386,
-   "prr": 502.37,
-   "ror": 768.69,
-   "chi2": 89683.92,
+   "a": 228,
+   "product_total": 659,
+   "event_total": 1046,
+   "n": 1185596,
+   "prr": 501.18,
+   "ror": 765.77,
+   "chi2": 88692.03,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -2502,18 +2069,18 @@
     "product": "LENS, INTRAOCULAR, TORIC OPTICS",
     "event": "Visual Impairment",
     "injury_severity": 7,
-    "mechanism_plausibility": 7,
-    "label_gap": 0,
-    "crowding_penalty": 8,
-    "viability": 3,
-    "recommendation": "pass",
-    "rationale": "Class III PMA device (22 PMAs) with Riegel preemption. Visual impairment post-IOL is severe and objective, but this is essentially the device failing to work (indication confounding: toric IOLs are implanted to correct astigmatism/restore vision). PRR declining (-12.8/quarter). Two old individual cases (2017-2018) suggest no momentum. No parallel-claim theory; pass.",
+    "mechanism_plausibility": 6,
+    "label_gap": 3,
+    "crowding_penalty": 7,
+    "viability": 6,
+    "recommendation": "monitor",
+    "rationale": "Visual impairment is a significant injury, but toric IOLs correct astigmatism\u2014poor visual outcomes may reflect surgical technique, rotation, or pre-existing pathology (keratoconus noted in literature). PMA Class III preemption blocks design/warning claims unless parallel theory exists. Two historic cases (2017-2018) suggest prior attempts; no recent MDL. Extremely high PRR may be artifact (vision is the condition being treated). Absent manufacturing defect evidence, viability is capped.",
     "likely_defendants": [
+     "Bausch & Lomb",
      "Alcon",
-     "J&J Vision",
-     "Bausch + Lomb"
+     "Johnson & Johnson Vision"
     ],
-    "viability_raw": 10,
+    "viability_raw": 20,
     "preemption_adjusted": true
    },
    "preemption_flag": {
@@ -2523,15 +2090,474 @@
   },
   {
    "source": "maude",
+   "product": "AORTIC VALVE, PROSTHESIS, PERCUTANEOUSLY DELIV",
+   "event": "Aortic Valve Insufficiency/ Regurgitation",
+   "a": 691,
+   "product_total": 4270,
+   "event_total": 1555,
+   "n": 1185596,
+   "prr": 221.26,
+   "ror": 263.79,
+   "chi2": 84172.3,
+   "trajectory": [
+    {
+     "quarter": "2025Q1",
+     "a": 96,
+     "prr": 123.63
+    },
+    {
+     "quarter": "2025Q2",
+     "a": 111,
+     "prr": 97.42
+    },
+    {
+     "quarter": "2025Q3",
+     "a": 102,
+     "prr": 173.0
+    },
+    {
+     "quarter": "2025Q4",
+     "a": 176,
+     "prr": 190.4
+    },
+    {
+     "quarter": "2026Q1",
+     "a": 210,
+     "prr": 211.33
+    },
+    {
+     "quarter": "2026Q2",
+     "a": 216,
+     "prr": 295.28
+    }
+   ],
+   "prr_slope": 34.33,
+   "enrichment": {
+    "pubmed": {
+     "count": 0,
+     "titles": []
+    },
+    "preemption": {
+     "product_code": "NPT",
+     "device_class": "3",
+     "pma_count": 661,
+     "k510_count": 0,
+     "pathway": "PMA (Class III)",
+     "preempted": true,
+     "evidence": "Class III device (product code NPT) with 661 PMA approval(s) \u2014 Riegel express preemption of design/warning claims"
+    },
+    "litigation": {
+     "docket_hits": 0,
+     "sample_cases": []
+    }
+   },
+   "score": {
+    "product": "AORTIC VALVE, PROSTHESIS, PERCUTANEOUSLY DELIV",
+    "event": "Aortic Valve Insufficiency/ Regurgitation",
+    "injury_severity": 9,
+    "mechanism_plausibility": 9,
+    "label_gap": 0,
+    "crowding_penalty": 10,
+    "viability": 6,
+    "recommendation": "monitor",
+    "rationale": "Paravalvular leak (aortic regurgitation) post-TAVR is a severe, well-documented complication requiring re-intervention or open surgery. Mechanism is clear: sizing error or valve calcification causes incomplete seal. Strong positive trajectory (+34.33/quarter) is notable. However, PMA Class III preemption blocks design/warning claims. Zero litigation despite rising reports suggests no parallel-claim opening yet. Monitor for manufacturing variance (e.g., valve undersizing lot, skirt defect) or FDA reporting lapses that could support a Riegel exception.",
+    "likely_defendants": [
+     "Edwards Lifesciences",
+     "Medtronic",
+     "Boston Scientific",
+     "Abbott"
+    ],
+    "viability_raw": 20,
+    "preemption_adjusted": true
+   },
+   "preemption_flag": {
+    "flag": "device_preemption",
+    "note": "AORTIC VALVE, PROSTHESIS, PERCUTANEOUSLY DELIV is a PMA (Class III) device. Riegel v. Medtronic preempts state design-defect and failure-to-warn claims on PMA devices; viability is downweighted. Parallel claims (manufacturing defect / violation of the device's own FDA-approved requirements, failure to report to FDA) survive preemption \u2014 assess those before passing."
+   }
+  },
+  {
+   "source": "faers",
+   "product": "DESOXIMETASONE",
+   "event": "MUSCLE INJURY",
+   "a": 337,
+   "product_total": 1364,
+   "event_total": 618,
+   "n": 487616,
+   "prr": 427.53,
+   "ror": 567.5,
+   "chi2": 65093.68,
+   "trajectory": [
+    {
+     "quarter": "2025Q1",
+     "a": 197,
+     "prr": 357.95
+    },
+    {
+     "quarter": "2025Q2",
+     "a": 136,
+     "prr": 597.44
+    },
+    {
+     "quarter": "2025Q3",
+     "a": 179,
+     "prr": 406.33
+    },
+    {
+     "quarter": "2025Q4",
+     "a": 131,
+     "prr": 370.69
+    },
+    {
+     "quarter": "2026Q1",
+     "a": 77,
+     "prr": 460.42
+    },
+    {
+     "quarter": "2026Q2",
+     "a": 0,
+     "prr": 0
+    }
+   ],
+   "prr_slope": -71.59,
+   "enrichment": {
+    "pubmed": {
+     "count": 0,
+     "titles": []
+    },
+    "label": {
+     "label_found": true,
+     "event_in_warnings": false,
+     "warning_snippet": "",
+     "has_boxed_warning": false
+    },
+    "generic": {
+     "available": true,
+     "categories": {
+      "ANDA": 34,
+      "BULK INGREDIENT FOR HUMAN PRESCRIPTION COMPOUNDING": 2,
+      "NDA AUTHORIZED GENERIC": 1,
+      "BULK INGREDIENT": 4,
+      "NDA": 3
+     },
+     "evidence": "35 ANDA/authorized-generic NDC listings on the market"
+    },
+    "litigation": {
+     "docket_hits": 0,
+     "sample_cases": []
+    }
+   },
+   "score": {
+    "product": "DESOXIMETASONE",
+    "event": "MUSCLE INJURY",
+    "injury_severity": 5,
+    "mechanism_plausibility": 2,
+    "label_gap": 6,
+    "crowding_penalty": 9,
+    "viability": 5,
+    "recommendation": "pass",
+    "rationale": "Another topical corticosteroid signal with an implausible mechanism\u2014muscle injury from a skin cream defies biological logic unless there is prolonged systemic corticosteroid exposure (not typical with topical use). The PRR trajectory again collapses to zero, indicating artifact. Generic market dominance (35 ANDAs) preempts failure-to-warn claims. No litigation viability.",
+    "likely_defendants": [
+     "Generic manufacturers (preempted)"
+    ],
+    "viability_raw": 10,
+    "generic_adjusted": true
+   },
+   "generic_flag": {
+    "flag": "generic_available",
+    "note": "Generic equivalents are on the market for DESOXIMETASONE (35 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
+   }
+  },
+  {
+   "source": "maude",
+   "product": "DENTAL IMPLANT",
+   "event": "Inadequate Osseointegration",
+   "a": 6202,
+   "product_total": 41342,
+   "event_total": 15235,
+   "n": 1185596,
+   "prr": 19.0,
+   "ror": 22.18,
+   "chi2": 63524.13,
+   "trajectory": [
+    {
+     "quarter": "2025Q1",
+     "a": 1922,
+     "prr": 33.78
+    },
+    {
+     "quarter": "2025Q2",
+     "a": 875,
+     "prr": 15.36
+    },
+    {
+     "quarter": "2025Q3",
+     "a": 1953,
+     "prr": 54.5
+    },
+    {
+     "quarter": "2025Q4",
+     "a": 853,
+     "prr": 6.79
+    },
+    {
+     "quarter": "2026Q1",
+     "a": 2509,
+     "prr": 31.72
+    },
+    {
+     "quarter": "2026Q2",
+     "a": 1340,
+     "prr": 14.95
+    }
+   ],
+   "prr_slope": -3.77,
+   "enrichment": {
+    "pubmed": {
+     "count": 3,
+     "titles": [
+      {
+       "pmid": "40439262",
+       "title": "Bioinspired Amine-Guided Polyphenol Coatings for Selective Bacterial Disruption and Osseointegration on Orthopedic Implants.",
+       "date": "2025 Jun 11"
+      },
+      {
+       "pmid": "39590543",
+       "title": "Propolis in Dental Implantology: A Systematic Review of Its Effects and Benefits.",
+       "date": "2024 Nov 12"
+      },
+      {
+       "pmid": "34684930",
+       "title": "Dental Implant Nano-Engineering: Advances, Limitations and Future Directions.",
+       "date": "2021 Sep 24"
+      }
+     ]
+    },
+    "preemption": {
+     "product_code": "DZE",
+     "device_class": "2",
+     "pma_count": null,
+     "k510_count": null,
+     "pathway": "Class 2 (510(k)/exempt)",
+     "preempted": false,
+     "evidence": "Class 2 device (code DZE) \u2014 510(k)/exempt pathway; Lohr, not preempted"
+    },
+    "litigation": {
+     "docket_hits": 0,
+     "sample_cases": []
+    }
+   },
+   "score": {
+    "product": "DENTAL IMPLANT",
+    "event": "Inadequate Osseointegration",
+    "injury_severity": 2,
+    "mechanism_plausibility": 5,
+    "label_gap": 3,
+    "crowding_penalty": 10,
+    "viability": 5,
+    "recommendation": "pass",
+    "rationale": "Inadequate osseointegration (implant failing to fuse to bone) is the very risk dental implants are designed to mitigate\u2014it reflects product failure, not a new injury. This is akin to indication confounding: the 'event' is the implant not working, not causing a distinct harm. The injury is also not severe (reversible with reimplantation). As a Class 2 device (510(k)), there is no preemption, but the lack of a distinct injury and crowding (6,202 cases, steady reporting) renders this non-viable.",
+    "likely_defendants": [
+     "Multiple dental implant manufacturers"
+    ]
+   }
+  },
+  {
+   "source": "maude",
+   "product": "AORTIC VALVE, PROSTHESIS, PERCUTANEOUSLY DELIVERED",
+   "event": "Heart Block",
+   "a": 1100,
+   "product_total": 5433,
+   "event_total": 2857,
+   "n": 1185596,
+   "prr": 136.0,
+   "ror": 170.27,
+   "chi2": 90785.2,
+   "trajectory": [
+    {
+     "quarter": "2025Q1",
+     "a": 250,
+     "prr": 194.86
+    },
+    {
+     "quarter": "2025Q2",
+     "a": 243,
+     "prr": 124.49
+    },
+    {
+     "quarter": "2025Q3",
+     "a": 242,
+     "prr": 185.92
+    },
+    {
+     "quarter": "2025Q4",
+     "a": 276,
+     "prr": 134.0
+    },
+    {
+     "quarter": "2026Q1",
+     "a": 330,
+     "prr": 102.3
+    },
+    {
+     "quarter": "2026Q2",
+     "a": 308,
+     "prr": 160.8
+    }
+   ],
+   "prr_slope": -6.81,
+   "enrichment": {
+    "pubmed": {
+     "count": 0,
+     "titles": []
+    },
+    "preemption": {
+     "product_code": "NPT",
+     "device_class": "3",
+     "pma_count": 661,
+     "k510_count": 0,
+     "pathway": "PMA (Class III)",
+     "preempted": true,
+     "evidence": "Class III device (product code NPT) with 661 PMA approval(s) \u2014 Riegel express preemption of design/warning claims"
+    },
+    "litigation": {
+     "docket_hits": 0,
+     "sample_cases": []
+    }
+   },
+   "score": {
+    "product": "AORTIC VALVE, PROSTHESIS, PERCUTANEOUSLY DELIVERED",
+    "event": "Heart Block",
+    "injury_severity": 8,
+    "mechanism_plausibility": 9,
+    "label_gap": 0,
+    "crowding_penalty": 10,
+    "viability": 4,
+    "recommendation": "monitor",
+    "rationale": "Heart block post-TAVR is a known, serious complication requiring pacemaker implantation\u2014objectively diagnosable and permanent. Mechanism is plausible (valve positioning disrupts conduction system). However, PMA Class III preemption is fatal absent a parallel claim. Zero litigation and negative PRR slope suggest no plaintiffs' firm has found an opening. Monitor for evidence of manufacturing variance or FDA reporting violations that could support a parallel claim.",
+    "likely_defendants": [
+     "Edwards Lifesciences",
+     "Medtronic",
+     "Boston Scientific"
+    ],
+    "viability_raw": 15,
+    "preemption_adjusted": true
+   },
+   "preemption_flag": {
+    "flag": "device_preemption",
+    "note": "AORTIC VALVE, PROSTHESIS, PERCUTANEOUSLY DELIVERED is a PMA (Class III) device. Riegel v. Medtronic preempts state design-defect and failure-to-warn claims on PMA devices; viability is downweighted. Parallel claims (manufacturing defect / violation of the device's own FDA-approved requirements, failure to report to FDA) survive preemption \u2014 assess those before passing."
+   }
+  },
+  {
+   "source": "faers",
+   "product": "DESOXIMETASONE",
+   "event": "SYNOVITIS",
+   "a": 400,
+   "product_total": 1364,
+   "event_total": 785,
+   "n": 487616,
+   "prr": 370.38,
+   "ror": 523.65,
+   "chi2": 72203.18,
+   "trajectory": [
+    {
+     "quarter": "2025Q1",
+     "a": 259,
+     "prr": 328.92
+    },
+    {
+     "quarter": "2025Q2",
+     "a": 159,
+     "prr": 510.92
+    },
+    {
+     "quarter": "2025Q3",
+     "a": 236,
+     "prr": 343.73
+    },
+    {
+     "quarter": "2025Q4",
+     "a": 151,
+     "prr": 293.76
+    },
+    {
+     "quarter": "2026Q1",
+     "a": 64,
+     "prr": 323.54
+    },
+    {
+     "quarter": "2026Q2",
+     "a": 0,
+     "prr": 0
+    }
+   ],
+   "prr_slope": -65.78,
+   "enrichment": {
+    "pubmed": {
+     "count": 0,
+     "titles": []
+    },
+    "label": {
+     "label_found": true,
+     "event_in_warnings": false,
+     "warning_snippet": "",
+     "has_boxed_warning": false
+    },
+    "generic": {
+     "available": true,
+     "categories": {
+      "ANDA": 34,
+      "BULK INGREDIENT FOR HUMAN PRESCRIPTION COMPOUNDING": 2,
+      "NDA AUTHORIZED GENERIC": 1,
+      "BULK INGREDIENT": 4,
+      "NDA": 3
+     },
+     "evidence": "35 ANDA/authorized-generic NDC listings on the market"
+    },
+    "litigation": {
+     "docket_hits": 1,
+     "sample_cases": [
+      {
+       "caseName": "Nelson v. Commissioner of Social Security",
+       "court": "District Court, N.D. Ohio",
+       "dateFiled": "2016-10-07",
+       "docket_id": 6203334
+      }
+     ]
+    }
+   },
+   "score": {
+    "product": "DESOXIMETASONE",
+    "event": "SYNOVITIS",
+    "injury_severity": 4,
+    "mechanism_plausibility": 3,
+    "label_gap": 4,
+    "crowding_penalty": 10,
+    "viability": 4,
+    "recommendation": "pass",
+    "rationale": "Synovitis (joint inflammation) is diagnosable but often reversible. The PRR collapses to zero in 2026Q2, suggesting an artifact. Generic preemption is fatal: 35 ANDA products dominate the market, and state failure-to-warn claims are barred against generics. The one litigation hit is unrelated (Social Security benefits case). No viable brand theory or ongoing brand market share justifies pursuit.",
+    "likely_defendants": [
+     "sanofi-aventis (brand NDA holder)",
+     "generic ANDA holders"
+    ],
+    "viability_raw": 8,
+    "generic_adjusted": true
+   },
+   "generic_flag": {
+    "flag": "generic_available",
+    "note": "Generic equivalents are on the market for DESOXIMETASONE (35 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
+   }
+  },
+  {
+   "source": "maude",
    "product": "CORONARY DRUG-ELUTING STENT",
    "event": "Vascular Dissection",
    "a": 370,
-   "product_total": 880,
-   "event_total": 2106,
-   "n": 1195386,
-   "prr": 289.31,
-   "ror": 498.47,
-   "chi2": 87544.63,
+   "product_total": 870,
+   "event_total": 2096,
+   "n": 1185596,
+   "prr": 291.92,
+   "ror": 507.2,
+   "chi2": 88250.92,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -2587,17 +2613,17 @@
    "score": {
     "product": "CORONARY DRUG-ELUTING STENT",
     "event": "Vascular Dissection",
-    "injury_severity": 8,
-    "mechanism_plausibility": 9,
+    "injury_severity": 9,
+    "mechanism_plausibility": 8,
     "label_gap": 0,
     "crowding_penalty": 10,
     "viability": 3,
     "recommendation": "pass",
-    "rationale": "Class III PMA device (1388 PMAs) with express Riegel preemption. Coronary dissection is a severe, well-known stent-deployment complication (mechanical injury during implantation), almost certainly in labeling/FDA summaries. Flat PRR trajectory (-0.24/quarter), no litigation. No parallel-claim theory. Pass despite injury severity and strong mechanism.",
+    "rationale": "Vascular dissection is a severe, acute injury with permanent consequences (often requiring surgical repair). Mechanism is clear: stent deployment can tear vessel wall. However, PMA Class III preemption is absolute absent parallel claim. Zero litigation and flat PRR trajectory indicate no plaintiff opening has emerged despite years of signal visibility. The risk is likely on-label, and dissection is a known procedural complication of angioplasty, not stent design per se.",
     "likely_defendants": [
      "Abbott Vascular",
-     "Medtronic",
-     "Boston Scientific"
+     "Boston Scientific",
+     "Medtronic"
     ],
     "viability_raw": 10,
     "preemption_adjusted": true
@@ -2609,15 +2635,271 @@
   },
   {
    "source": "maude",
+   "product": "TEMPORARY NON-ROLLER TYPE LEFT HEART SUPPORT BLOOD PUMP",
+   "event": "Hemodynamic instability",
+   "a": 974,
+   "product_total": 8898,
+   "event_total": 1643,
+   "n": 1185596,
+   "prr": 192.53,
+   "ror": 216.08,
+   "chi2": 75592.79,
+   "trajectory": [
+    {
+     "quarter": "2025Q1",
+     "a": 21,
+     "prr": 47.49
+    },
+    {
+     "quarter": "2025Q2",
+     "a": 16,
+     "prr": 13.87
+    },
+    {
+     "quarter": "2025Q3",
+     "a": 21,
+     "prr": 30.36
+    },
+    {
+     "quarter": "2025Q4",
+     "a": 87,
+     "prr": 102.8
+    },
+    {
+     "quarter": "2026Q1",
+     "a": 766,
+     "prr": 253.08
+    },
+    {
+     "quarter": "2026Q2",
+     "a": 102,
+     "prr": 93.93
+    }
+   ],
+   "prr_slope": 9.29,
+   "enrichment": {
+    "pubmed": {
+     "count": 0,
+     "titles": []
+    },
+    "preemption": {
+     "product_code": "OZD",
+     "device_class": "3",
+     "pma_count": 128,
+     "k510_count": 0,
+     "pathway": "PMA (Class III)",
+     "preempted": true,
+     "evidence": "Class III device (product code OZD) with 128 PMA approval(s) \u2014 Riegel express preemption of design/warning claims"
+    },
+    "litigation": {
+     "docket_hits": 0,
+     "sample_cases": []
+    }
+   },
+   "score": {
+    "product": "TEMPORARY NON-ROLLER TYPE LEFT HEART SUPPORT BLOOD PUMP",
+    "event": "Hemodynamic instability",
+    "injury_severity": 8,
+    "mechanism_plausibility": 8,
+    "label_gap": 0,
+    "crowding_penalty": 10,
+    "viability": 3,
+    "recommendation": "pass",
+    "rationale": "Hemodynamic instability in a device designed to support failing circulation is a known risk/complication or device failure, not a new injury. The PMA Class III status triggers Riegel preemption absent a parallel claim. The spike in 2026Q1 (766 cases, PRR 253) followed by collapse suggests a single-center reporting event or manufacturer recall, not a systemic defect. With zero litigation and the event being the very condition the device treats, there is no viable failure-to-warn theory. Only a parallel claim (manufacturing defect, FDA violation) could survive, and none is evident.",
+    "likely_defendants": [
+     "Abiomed (Johnson & Johnson)",
+     "Teleflex"
+    ],
+    "viability_raw": 10,
+    "preemption_adjusted": true
+   },
+   "preemption_flag": {
+    "flag": "device_preemption",
+    "note": "TEMPORARY NON-ROLLER TYPE LEFT HEART SUPPORT BLOOD PUMP is a PMA (Class III) device. Riegel v. Medtronic preempts state design-defect and failure-to-warn claims on PMA devices; viability is downweighted. Parallel claims (manufacturing defect / violation of the device's own FDA-approved requirements, failure to report to FDA) survive preemption \u2014 assess those before passing."
+   }
+  },
+  {
+   "source": "maude",
+   "product": "TEMPORARY NON-ROLLER TYPE LEFT HEART SUPPORT BLOOD PUMP",
+   "event": "Ischemia",
+   "a": 931,
+   "product_total": 8898,
+   "event_total": 1543,
+   "n": 1185596,
+   "prr": 201.17,
+   "ror": 224.57,
+   "chi2": 73564.92,
+   "trajectory": [
+    {
+     "quarter": "2025Q1",
+     "a": 175,
+     "prr": 357.1
+    },
+    {
+     "quarter": "2025Q2",
+     "a": 239,
+     "prr": 215.57
+    },
+    {
+     "quarter": "2025Q3",
+     "a": 220,
+     "prr": 286.45
+    },
+    {
+     "quarter": "2025Q4",
+     "a": 177,
+     "prr": 239.25
+    },
+    {
+     "quarter": "2026Q1",
+     "a": 387,
+     "prr": 140.38
+    },
+    {
+     "quarter": "2026Q2",
+     "a": 213,
+     "prr": 257.61
+    }
+   ],
+   "prr_slope": -19.9,
+   "enrichment": {
+    "pubmed": {
+     "count": 0,
+     "titles": []
+    },
+    "preemption": {
+     "product_code": "OZD",
+     "device_class": "3",
+     "pma_count": 128,
+     "k510_count": 0,
+     "pathway": "PMA (Class III)",
+     "preempted": true,
+     "evidence": "Class III device (product code OZD) with 128 PMA approval(s) \u2014 Riegel express preemption of design/warning claims"
+    },
+    "litigation": {
+     "docket_hits": 0,
+     "sample_cases": []
+    }
+   },
+   "score": {
+    "product": "TEMPORARY NON-ROLLER TYPE LEFT HEART SUPPORT BLOOD PUMP",
+    "event": "Ischemia",
+    "injury_severity": 9,
+    "mechanism_plausibility": 9,
+    "label_gap": 0,
+    "crowding_penalty": 10,
+    "viability": 3,
+    "recommendation": "pass",
+    "rationale": "Ischemia (tissue death from inadequate blood flow) in a device meant to restore circulation is either a device failure or a known complication of critical illness. The PMA Class III status triggers Riegel preemption of design/warning claims. The declining PRR slope and zero litigation suggest no viable tort theory has emerged. Like hemodynamic instability, this event reflects the device failing to prevent the condition it treats, not causing a new injury. Only a parallel claim (manufacturing defect, FDA reporting violation) could proceed, and none is apparent. Pass unless evidence of a systemic manufacturing defect surfaces.",
+    "likely_defendants": [
+     "Abiomed (Johnson & Johnson)",
+     "Teleflex"
+    ],
+    "viability_raw": 10,
+    "preemption_adjusted": true
+   },
+   "preemption_flag": {
+    "flag": "device_preemption",
+    "note": "TEMPORARY NON-ROLLER TYPE LEFT HEART SUPPORT BLOOD PUMP is a PMA (Class III) device. Riegel v. Medtronic preempts state design-defect and failure-to-warn claims on PMA devices; viability is downweighted. Parallel claims (manufacturing defect / violation of the device's own FDA-approved requirements, failure to report to FDA) survive preemption \u2014 assess those before passing."
+   }
+  },
+  {
+   "source": "maude",
+   "product": "PROSTHESIS, BREAST, NONINFLATABLE, INTERNAL, SILICONE GEL-FILLED",
+   "event": "Deformity/ Disfigurement",
+   "a": 4164,
+   "product_total": 27790,
+   "event_total": 9519,
+   "n": 1185596,
+   "prr": 32.4,
+   "ror": 37.93,
+   "chi2": 71834.73,
+   "trajectory": [
+    {
+     "quarter": "2025Q1",
+     "a": 1067,
+     "prr": 22.44
+    },
+    {
+     "quarter": "2025Q2",
+     "a": 1054,
+     "prr": 22.55
+    },
+    {
+     "quarter": "2025Q3",
+     "a": 1133,
+     "prr": 53.18
+    },
+    {
+     "quarter": "2025Q4",
+     "a": 1133,
+     "prr": 49.15
+    },
+    {
+     "quarter": "2026Q1",
+     "a": 1140,
+     "prr": 15.33
+    },
+    {
+     "quarter": "2026Q2",
+     "a": 1006,
+     "prr": 64.39
+    }
+   ],
+   "prr_slope": 8.39,
+   "enrichment": {
+    "pubmed": {
+     "count": 0,
+     "titles": []
+    },
+    "preemption": {
+     "product_code": "FTR",
+     "device_class": "3",
+     "pma_count": 259,
+     "k510_count": 0,
+     "pathway": "PMA (Class III)",
+     "preempted": true,
+     "evidence": "Class III device (product code FTR) with 259 PMA approval(s) \u2014 Riegel express preemption of design/warning claims"
+    },
+    "litigation": {
+     "docket_hits": 0,
+     "sample_cases": []
+    }
+   },
+   "score": {
+    "product": "PROSTHESIS, BREAST, NONINFLATABLE, INTERNAL, SILICONE GEL-FILLED",
+    "event": "Deformity/ Disfigurement",
+    "injury_severity": 8,
+    "mechanism_plausibility": 7,
+    "label_gap": 0,
+    "crowding_penalty": 3,
+    "viability": 3,
+    "recommendation": "monitor",
+    "rationale": "Breast implant deformity is a severe, permanent, and objectivity-verifiable injury with a plausible mechanism (capsular contracture, rupture, implant migration). However, Class III PMA devices face Riegel express preemption of design-defect and failure-to-warn claims. Parallel claims (manufacturing defects, violations of FDA-approved specs, failure to report adverse events) could survive, but the accelerating PRR (slope +8.39) and large case volume (4164) suggest this is already well-known. Monitor for parallel-claim theories or new manufacturer conduct.",
+    "likely_defendants": [
+     "Allergan (now AbbVie)",
+     "Mentor (J&J)",
+     "Sientra"
+    ],
+    "viability_raw": 10,
+    "preemption_adjusted": true
+   },
+   "preemption_flag": {
+    "flag": "device_preemption",
+    "note": "PROSTHESIS, BREAST, NONINFLATABLE, INTERNAL, SILICONE GEL-FILLED is a PMA (Class III) device. Riegel v. Medtronic preempts state design-defect and failure-to-warn claims on PMA devices; viability is downweighted. Parallel claims (manufacturing defect / violation of the device's own FDA-approved requirements, failure to report to FDA) survive preemption \u2014 assess those before passing."
+   }
+  },
+  {
+   "source": "maude",
    "product": "AORTIC VALVE, PROSTHESIS, PERCUTANEOUSLY DELIV",
    "event": "Non specific EKG/ECG Changes",
-   "a": 709,
-   "product_total": 4302,
-   "event_total": 1480,
-   "n": 1195386,
-   "prr": 254.6,
-   "ror": 304.65,
-   "chi2": 93283.56,
+   "a": 704,
+   "product_total": 4270,
+   "event_total": 1472,
+   "n": 1185596,
+   "prr": 253.6,
+   "ror": 303.47,
+   "chi2": 92398.59,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -2673,13 +2955,13 @@
    "score": {
     "product": "AORTIC VALVE, PROSTHESIS, PERCUTANEOUSLY DELIV",
     "event": "Non specific EKG/ECG Changes",
-    "injury_severity": 3,
-    "mechanism_plausibility": 7,
+    "injury_severity": 2,
+    "mechanism_plausibility": 6,
     "label_gap": 0,
     "crowding_penalty": 10,
     "viability": 2,
     "recommendation": "pass",
-    "rationale": "Class III PMA device with express Riegel preemption of design/warning claims. Conduction disturbances are well-known TAVR complications, likely already in labeling. ECG changes alone are objective but often transient/subclinical, limiting injury severity. No parallel-claim theory (manufacturing defect, specification violation) is evident. PRR declining sharply (-19/quarter), signal fading.",
+    "rationale": "PMA Class III device carries Riegel express preemption, barring design and failure-to-warn claims. 'Non-specific EKG changes' is vague, subjective, and not a cognizable injury\u2014it's a diagnostic finding, not harm. The negative PRR slope, zero litigation, and lack of parallel-claim opening (no manufacturing defect alleged) make this unviable. Even absent preemption, the injury is too diffuse to anchor a tort.",
     "likely_defendants": [
      "Edwards Lifesciences",
      "Medtronic"
@@ -2693,16 +2975,101 @@
    }
   },
   {
+   "source": "maude",
+   "product": "STIMULATOR, ELECTRICAL, IMPLANTABLE, FOR INCON",
+   "event": "Urinary Retention",
+   "a": 381,
+   "product_total": 2393,
+   "event_total": 888,
+   "n": 1185596,
+   "prr": 371.56,
+   "ror": 441.74,
+   "chi2": 80240.22,
+   "trajectory": [
+    {
+     "quarter": "2025Q1",
+     "a": 103,
+     "prr": 442.33
+    },
+    {
+     "quarter": "2025Q2",
+     "a": 102,
+     "prr": 207.16
+    },
+    {
+     "quarter": "2025Q3",
+     "a": 86,
+     "prr": 273.55
+    },
+    {
+     "quarter": "2025Q4",
+     "a": 111,
+     "prr": 465.6
+    },
+    {
+     "quarter": "2026Q1",
+     "a": 100,
+     "prr": 337.75
+    },
+    {
+     "quarter": "2026Q2",
+     "a": 98,
+     "prr": 425.94
+    }
+   ],
+   "prr_slope": -3.28,
+   "enrichment": {
+    "pubmed": {
+     "count": 0,
+     "titles": []
+    },
+    "preemption": {
+     "product_code": "EZW",
+     "device_class": "3",
+     "pma_count": 551,
+     "k510_count": 0,
+     "pathway": "PMA (Class III)",
+     "preempted": true,
+     "evidence": "Class III device (product code EZW) with 551 PMA approval(s) \u2014 Riegel express preemption of design/warning claims"
+    },
+    "litigation": {
+     "docket_hits": 0,
+     "sample_cases": []
+    }
+   },
+   "score": {
+    "product": "STIMULATOR, ELECTRICAL, IMPLANTABLE, FOR INCON",
+    "event": "Urinary Retention",
+    "injury_severity": 5,
+    "mechanism_plausibility": 8,
+    "label_gap": 0,
+    "crowding_penalty": 10,
+    "viability": 2,
+    "recommendation": "pass",
+    "rationale": "Urinary retention in a device treating urinary incontinence represents a known risk/complication or device failure, not a new injury. The flat-to-declining PRR slope (-3.28) and PMA Class III status trigger Riegel preemption of design and warning claims. Unless a parallel claim theory exists (manufacturing defect, FDA violation), state tort claims are barred. With zero litigation and zero literature, and no evidence of a systematic manufacturing defect, this signal offers no viable mass-tort path despite the high PRR.",
+    "likely_defendants": [
+     "Medtronic",
+     "Axonics"
+    ],
+    "viability_raw": 5,
+    "preemption_adjusted": true
+   },
+   "preemption_flag": {
+    "flag": "device_preemption",
+    "note": "STIMULATOR, ELECTRICAL, IMPLANTABLE, FOR INCON is a PMA (Class III) device. Riegel v. Medtronic preempts state design-defect and failure-to-warn claims on PMA devices; viability is downweighted. Parallel claims (manufacturing defect / violation of the device's own FDA-approved requirements, failure to report to FDA) survive preemption \u2014 assess those before passing."
+   }
+  },
+  {
    "source": "faers",
    "product": "DESOXIMETASONE",
    "event": "GLOSSODYNIA",
-   "a": 432,
-   "product_total": 1379,
-   "event_total": 889,
-   "n": 493414,
-   "prr": 337.29,
-   "ror": 490.69,
-   "chi2": 74420.04,
+   "a": 426,
+   "product_total": 1364,
+   "event_total": 880,
+   "n": 487616,
+   "prr": 334.5,
+   "ror": 485.97,
+   "chi2": 73036.76,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -2750,11 +3117,11 @@
     "generic": {
      "available": true,
      "categories": {
-      "NDA": 3,
       "ANDA": 34,
       "BULK INGREDIENT FOR HUMAN PRESCRIPTION COMPOUNDING": 2,
       "NDA AUTHORIZED GENERIC": 1,
-      "BULK INGREDIENT": 4
+      "BULK INGREDIENT": 4,
+      "NDA": 3
      },
      "evidence": "35 ANDA/authorized-generic NDC listings on the market"
     },
@@ -2767,15 +3134,15 @@
     "product": "DESOXIMETASONE",
     "event": "GLOSSODYNIA",
     "injury_severity": 2,
-    "mechanism_plausibility": 4,
-    "label_gap": 8,
+    "mechanism_plausibility": 3,
+    "label_gap": 4,
     "crowding_penalty": 10,
     "viability": 2,
     "recommendation": "pass",
-    "rationale": "Glossodynia (burning tongue) is a subjective, non-permanent complaint. Desoximetasone is a topical corticosteroid; glossodynia after oral mucosa exposure is biologically plausible but minor. Label found, event not in warnings. CRITICAL: 35 ANDAs on market (generic available = true). Post-Mensing/Bartlett, failure-to-warn claims against generics are preempted. No litigation despite 432 cases. Low injury severity + generic preemption = minimal viability. Pass.",
+    "rationale": "Glossodynia (burning tongue) is subjective, transient, and difficult to prove objectively. The PRR collapses to zero in 2026Q2, indicating a near-zero-background artifact rather than a sustained signal. Generic availability severely limits recovery: 35 ANDA products are on the market, and failure-to-warn claims against generic manufacturers are preempted. No plausible theory against the brand exists given the signal's collapse and lack of literature support.",
     "likely_defendants": [
-     "Taro Pharmaceuticals (brand)",
-     "generic manufacturers (preempted)"
+     "sanofi-aventis (brand NDA holder)",
+     "generic ANDA holders"
     ],
     "viability_raw": 5,
     "generic_adjusted": true
@@ -2789,13 +3156,13 @@
    "source": "maude",
    "product": "AUTOMATED INSULIN DOSING DEVICE SYSTEM, SINGLE HORMONAL CONTROL",
    "event": "Hypoglycemia",
-   "a": 5666,
-   "product_total": 17359,
-   "event_total": 28261,
-   "n": 1195386,
-   "prr": 17.02,
-   "ror": 24.78,
-   "chi2": 69936.22,
+   "a": 5630,
+   "product_total": 17281,
+   "event_total": 28104,
+   "n": 1185596,
+   "prr": 16.94,
+   "ror": 24.64,
+   "chi2": 69137.43,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -2883,8 +3250,12 @@
     "crowding_penalty": 10,
     "viability": 2,
     "recommendation": "pass",
-    "rationale": "INDICATION CONFOUNDING: Hypoglycemia is the primary risk insulin therapy is designed to prevent/manage; a disproportionality spike here reflects the device failing to maintain euglycemia (lack of efficacy), not causing a new injury. Automated insulin-dosing systems are prescribed to diabetics who already experience hypoglycemia. There is no duty to warn that an insulin pump may cause hypoglycemia. Additionally, this is a PMA Class III device (preempted). The negative PRR slope and zero litigation confirm this is artifact. Pass.",
-    "likely_defendants": [],
+    "rationale": "Hypoglycemia is the very risk these automated insulin delivery systems are designed to prevent; reports reflect lack of efficacy (device failing to prevent the indication event), not a new injury. The PRR is declining (slope -3.69) and reflects background noise. Class III PMA device faces Riegel preemption. Even if a parallel claim existed (software malfunction, manufacturing defect), the high case volume (5630) and established literature suggest the risk is known and labeled. This is a pass: no duty to warn that insulin therapy may fail to control glucose.",
+    "likely_defendants": [
+     "Medtronic",
+     "Tandem Diabetes Care",
+     "Insulet"
+    ],
     "viability_raw": 5,
     "preemption_adjusted": true
    },
@@ -2895,369 +3266,15 @@
   },
   {
    "source": "faers",
-   "product": "DESOXIMETASONE",
-   "event": "MUSCLE INJURY",
-   "a": 340,
-   "product_total": 1379,
-   "event_total": 624,
-   "n": 493414,
-   "prr": 427.16,
-   "ror": 566.62,
-   "chi2": 65680.11,
-   "trajectory": [
-    {
-     "quarter": "2025Q1",
-     "a": 197,
-     "prr": 357.95
-    },
-    {
-     "quarter": "2025Q2",
-     "a": 136,
-     "prr": 597.44
-    },
-    {
-     "quarter": "2025Q3",
-     "a": 179,
-     "prr": 406.33
-    },
-    {
-     "quarter": "2025Q4",
-     "a": 131,
-     "prr": 370.69
-    },
-    {
-     "quarter": "2026Q1",
-     "a": 77,
-     "prr": 460.42
-    },
-    {
-     "quarter": "2026Q2",
-     "a": 0,
-     "prr": 0
-    }
-   ],
-   "prr_slope": -71.59,
-   "enrichment": {
-    "pubmed": {
-     "count": 0,
-     "titles": []
-    },
-    "label": {
-     "label_found": true,
-     "event_in_warnings": false,
-     "warning_snippet": "",
-     "has_boxed_warning": false
-    },
-    "generic": {
-     "available": true,
-     "categories": {
-      "NDA": 3,
-      "ANDA": 34,
-      "BULK INGREDIENT FOR HUMAN PRESCRIPTION COMPOUNDING": 2,
-      "NDA AUTHORIZED GENERIC": 1,
-      "BULK INGREDIENT": 4
-     },
-     "evidence": "35 ANDA/authorized-generic NDC listings on the market"
-    },
-    "litigation": {
-     "docket_hits": 0,
-     "sample_cases": []
-    }
-   },
-   "score": {
-    "product": "DESOXIMETASONE",
-    "event": "MUSCLE INJURY",
-    "injury_severity": 3,
-    "mechanism_plausibility": 2,
-    "label_gap": 5,
-    "crowding_penalty": 10,
-    "viability": 2,
-    "recommendation": "pass",
-    "rationale": "Desoximetasone is a topical corticosteroid; a mechanism linking topical use to systemic muscle injury is implausible without chronic high-dose absorption. The PRR spike then collapse to zero (2026Q2) indicates artifact rather than genuine signal acceleration. Generic availability (35 ANDAs) triggers preemption of failure-to-warn claims against generic manufacturers, severely limiting the defendant pool. The 13 litigation hits appear unrelated to this adverse event (opioid/antitrust cases).",
-    "likely_defendants": [
-     "Brand manufacturer (limited market share post-generic entry)"
-    ],
-    "viability_raw": 5,
-    "generic_adjusted": true
-   },
-   "generic_flag": {
-    "flag": "generic_available",
-    "note": "Generic equivalents are on the market for DESOXIMETASONE (35 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
-   }
-  },
-  {
-   "source": "faers",
-   "product": "DESOXIMETASONE",
-   "event": "PERICARDITIS",
-   "a": 453,
-   "product_total": 1379,
-   "event_total": 1108,
-   "n": 493414,
-   "prr": 246.77,
-   "ror": 367.0,
-   "chi2": 65549.87,
-   "trajectory": [
-    {
-     "quarter": "2025Q1",
-     "a": 256,
-     "prr": 229.05
-    },
-    {
-     "quarter": "2025Q2",
-     "a": 151,
-     "prr": 275.81
-    },
-    {
-     "quarter": "2025Q3",
-     "a": 256,
-     "prr": 255.97
-    },
-    {
-     "quarter": "2025Q4",
-     "a": 177,
-     "prr": 228.6
-    },
-    {
-     "quarter": "2026Q1",
-     "a": 84,
-     "prr": 209.47
-    },
-    {
-     "quarter": "2026Q2",
-     "a": 0,
-     "prr": 0
-    }
-   ],
-   "prr_slope": -45.81,
-   "enrichment": {
-    "pubmed": {
-     "count": 0,
-     "titles": []
-    },
-    "label": {
-     "label_found": true,
-     "event_in_warnings": false,
-     "warning_snippet": "",
-     "has_boxed_warning": false
-    },
-    "generic": {
-     "available": true,
-     "categories": {
-      "NDA": 3,
-      "ANDA": 34,
-      "BULK INGREDIENT FOR HUMAN PRESCRIPTION COMPOUNDING": 2,
-      "NDA AUTHORIZED GENERIC": 1,
-      "BULK INGREDIENT": 4
-     },
-     "evidence": "35 ANDA/authorized-generic NDC listings on the market"
-    },
-    "litigation": {
-     "docket_hits": 0,
-     "sample_cases": []
-    }
-   },
-   "score": {
-    "product": "DESOXIMETASONE",
-    "event": "PERICARDITIS",
-    "injury_severity": 7,
-    "mechanism_plausibility": 1,
-    "label_gap": 5,
-    "crowding_penalty": 10,
-    "viability": 2,
-    "recommendation": "pass",
-    "rationale": "Pericarditis is a severe, diagnosable cardiac injury, but a topical corticosteroid causing systemic pericarditis lacks biological plausibility absent massive systemic absorption. The PRR collapses to zero in 2026Q2, suggesting data artifact. Generic market dominance (35 ANDAs) preempts most failure-to-warn theories. The litigation docket shows unrelated cases (opioid pricing, patent disputes), not desoximetasone-pericarditis claims.",
-    "likely_defendants": [
-     "Brand manufacturer (minimal viable pool)"
-    ],
-    "viability_raw": 3,
-    "generic_adjusted": true
-   },
-   "generic_flag": {
-    "flag": "generic_available",
-    "note": "Generic equivalents are on the market for DESOXIMETASONE (35 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
-   }
-  },
-  {
-   "source": "maude",
-   "product": "STIMULATOR, ELECTRICAL, IMPLANTABLE, FOR INCON",
-   "event": "Urinary Retention",
-   "a": 385,
-   "product_total": 2415,
-   "event_total": 895,
-   "n": 1195386,
-   "prr": 372.91,
-   "ror": 443.44,
-   "chi2": 81221.31,
-   "trajectory": [
-    {
-     "quarter": "2025Q1",
-     "a": 103,
-     "prr": 442.33
-    },
-    {
-     "quarter": "2025Q2",
-     "a": 102,
-     "prr": 207.16
-    },
-    {
-     "quarter": "2025Q3",
-     "a": 86,
-     "prr": 273.55
-    },
-    {
-     "quarter": "2025Q4",
-     "a": 111,
-     "prr": 465.6
-    },
-    {
-     "quarter": "2026Q1",
-     "a": 100,
-     "prr": 337.75
-    },
-    {
-     "quarter": "2026Q2",
-     "a": 98,
-     "prr": 425.94
-    }
-   ],
-   "prr_slope": -3.28,
-   "enrichment": {
-    "pubmed": {
-     "count": 0,
-     "titles": []
-    },
-    "preemption": {
-     "product_code": "EZW",
-     "device_class": "3",
-     "pma_count": 551,
-     "k510_count": 0,
-     "pathway": "PMA (Class III)",
-     "preempted": true,
-     "evidence": "Class III device (product code EZW) with 551 PMA approval(s) \u2014 Riegel express preemption of design/warning claims"
-    },
-    "litigation": {
-     "docket_hits": 0,
-     "sample_cases": []
-    }
-   },
-   "score": {
-    "product": "STIMULATOR, ELECTRICAL, IMPLANTABLE, FOR INCON",
-    "event": "Urinary Retention",
-    "injury_severity": 0,
-    "mechanism_plausibility": 0,
-    "label_gap": 0,
-    "crowding_penalty": 10,
-    "viability": 0,
-    "recommendation": "pass",
-    "rationale": "CLEAR INDICATION CONFOUNDING: sacral nerve stimulators are implanted to treat urinary retention/incontinence. The event 'urinary retention' is the condition the device is prescribed to treat, not a new injury. The disproportionality spike reflects the device failing to work (or incomplete therapeutic response), not causing harm. PMA preemption (Class III, 551 PMAs) would further bar most claims, but the confounding issue alone requires a viability score of 0.",
-    "likely_defendants": [
-     "Medtronic",
-     "Axonics"
-    ],
-    "viability_raw": 0,
-    "preemption_adjusted": true
-   },
-   "preemption_flag": {
-    "flag": "device_preemption",
-    "note": "STIMULATOR, ELECTRICAL, IMPLANTABLE, FOR INCON is a PMA (Class III) device. Riegel v. Medtronic preempts state design-defect and failure-to-warn claims on PMA devices; viability is downweighted. Parallel claims (manufacturing defect / violation of the device's own FDA-approved requirements, failure to report to FDA) survive preemption \u2014 assess those before passing."
-   }
-  },
-  {
-   "source": "maude",
-   "product": "TEMPORARY NON-ROLLER TYPE LEFT HEART SUPPORT BLOOD PUMP",
-   "event": "Hemodynamic instability",
-   "a": 975,
-   "product_total": 8954,
-   "event_total": 1652,
-   "n": 1195386,
-   "prr": 190.83,
-   "ror": 214.02,
-   "chi2": 75476.3,
-   "trajectory": [
-    {
-     "quarter": "2025Q1",
-     "a": 21,
-     "prr": 47.49
-    },
-    {
-     "quarter": "2025Q2",
-     "a": 16,
-     "prr": 13.87
-    },
-    {
-     "quarter": "2025Q3",
-     "a": 21,
-     "prr": 30.36
-    },
-    {
-     "quarter": "2025Q4",
-     "a": 87,
-     "prr": 102.8
-    },
-    {
-     "quarter": "2026Q1",
-     "a": 766,
-     "prr": 253.08
-    },
-    {
-     "quarter": "2026Q2",
-     "a": 102,
-     "prr": 93.93
-    }
-   ],
-   "prr_slope": 9.29,
-   "enrichment": {
-    "pubmed": {
-     "count": 0,
-     "titles": []
-    },
-    "preemption": {
-     "product_code": "OZD",
-     "device_class": "3",
-     "pma_count": 128,
-     "k510_count": 0,
-     "pathway": "PMA (Class III)",
-     "preempted": true,
-     "evidence": "Class III device (product code OZD) with 128 PMA approval(s) \u2014 Riegel express preemption of design/warning claims"
-    },
-    "litigation": {
-     "docket_hits": 0,
-     "sample_cases": []
-    }
-   },
-   "score": {
-    "product": "TEMPORARY NON-ROLLER TYPE LEFT HEART SUPPORT BLOOD PUMP",
-    "event": "Hemodynamic instability",
-    "injury_severity": 0,
-    "mechanism_plausibility": 0,
-    "label_gap": 0,
-    "crowding_penalty": 10,
-    "viability": 0,
-    "recommendation": "pass",
-    "rationale": "INDICATION CONFOUNDING: temporary left ventricular assist devices (e.g., Impella, TandemHeart) are implanted in patients with cardiogenic shock or hemodynamic instability. The event is the condition being treated, not a new injury. The PRR spike (47\u2192254\u219294) reflects intensive reporting during acute cardiac crises. PMA preemption (Class III, 128 PMAs) would additionally bar most claims. Viability is zero.",
-    "likely_defendants": [
-     "Abiomed (J&J)",
-     "Abbott"
-    ],
-    "viability_raw": 0,
-    "preemption_adjusted": true
-   },
-   "preemption_flag": {
-    "flag": "device_preemption",
-    "note": "TEMPORARY NON-ROLLER TYPE LEFT HEART SUPPORT BLOOD PUMP is a PMA (Class III) device. Riegel v. Medtronic preempts state design-defect and failure-to-warn claims on PMA devices; viability is downweighted. Parallel claims (manufacturing defect / violation of the device's own FDA-approved requirements, failure to report to FDA) survive preemption \u2014 assess those before passing."
-   }
-  },
-  {
-   "source": "faers",
    "product": "LEFLUNOMIDE",
    "event": "ANTI-CYCLIC CITRULLINATED PEPTIDE ANTIBODY POSITIVE",
-   "a": 457,
-   "product_total": 2804,
-   "event_total": 581,
-   "n": 493414,
-   "prr": 644.84,
-   "ror": 770.21,
-   "chi2": 62635.5,
+   "a": 454,
+   "product_total": 2765,
+   "event_total": 576,
+   "n": 487616,
+   "prr": 652.54,
+   "ror": 780.54,
+   "chi2": 62491.3,
    "trajectory": [
     {
      "quarter": "2025Q1",
@@ -3305,13 +3322,13 @@
     "generic": {
      "available": true,
      "categories": {
-      "ANDA": 37,
-      "BULK INGREDIENT": 6,
+      "BULK INGREDIENT": 7,
+      "ANDA": 36,
       "NDA": 3,
       "BULK INGREDIENT FOR HUMAN PRESCRIPTION COMPOUNDING": 3,
       "UNAPPROVED DRUG OTHER": 1
      },
-     "evidence": "37 ANDA/authorized-generic NDC listings on the market"
+     "evidence": "36 ANDA/authorized-generic NDC listings on the market"
     },
     "litigation": {
      "docket_hits": 0,
@@ -3321,20 +3338,22 @@
    "score": {
     "product": "LEFLUNOMIDE",
     "event": "ANTI-CYCLIC CITRULLINATED PEPTIDE ANTIBODY POSITIVE",
-    "injury_severity": 0,
-    "mechanism_plausibility": 0,
-    "label_gap": 0,
-    "crowding_penalty": 0,
+    "injury_severity": 1,
+    "mechanism_plausibility": 2,
+    "label_gap": 5,
+    "crowding_penalty": 10,
     "viability": 0,
     "recommendation": "pass",
-    "rationale": "This is classic indication confounding: leflunomide is prescribed for rheumatoid arthritis, and anti-CCP antibodies are a diagnostic marker/manifestation of RA itself, not a drug-induced injury. The disproportionality reflects that anti-CCP positivity is reported almost exclusively with RA drugs, not that leflunomide causes it. PRR collapse to zero confirms artifact. There is no injury here\u2014just lab values reflecting the underlying disease leflunomide is meant to treat. No litigation viability whatsoever.",
-    "likely_defendants": [],
+    "rationale": "This is classic indication confounding. Leflunomide is prescribed for rheumatoid arthritis, and anti-CCP antibodies are a diagnostic marker for RA, not a drug-induced injury. The signal reflects the drug being used in patients who already have RA (and thus are anti-CCP positive), not the drug causing the antibodies. The extreme PRRs (600+) collapsing to zero confirm this is artifact. Generic availability (36 ANDAs) further preempts claims. Viability is zero.",
+    "likely_defendants": [
+     "N/A"
+    ],
     "viability_raw": 0,
     "generic_adjusted": true
    },
    "generic_flag": {
     "flag": "generic_available",
-    "note": "Generic equivalents are on the market for LEFLUNOMIDE (37 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
+    "note": "Generic equivalents are on the market for LEFLUNOMIDE (36 ANDA/authorized-generic NDC listings on the market). Failure-to-warn against the generic maker is largely preempted (Mensing/Bartlett); viability is downweighted. Brand-exposure-window and innovator-liability theories may still apply \u2014 review before passing."
    }
   }
  ]
